@@ -24,3 +24,34 @@ package-lock.json
 /image/
 /extracted_index.html
 /其他網站原始碼/
+
+# 備份檔案
+admin/index.html.backup
+admin/index_with_debugbar.html
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# SQLite資料庫
+backend/*.db
+backend/*.db-journal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系統檔案
+.DS_Store
+Thumbs.db

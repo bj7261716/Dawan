@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登入 - 大灣藥局後台管理系統</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+        }
+
+        .login-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .login-box-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .login-box-header img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .login-box-header h3 {
+            color: #fff;
+            margin: 0;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .login-box-body {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            height: 48px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+
+        .btn-login {
+            width: 100%;
+            height: 48px;
+            font-size: 16px;
+            font-weight: 500;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .alert {
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 13px;
+        }
+
+        .input-group-text {
+            background: #f8f9fa;
+            border-right: none;
+        }
+
+        .form-control.with-icon {
+            border-left: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="login-box">
+            <div class="login-box-header">
+                <img src="./images/logo.png" alt="大灣藥局">
+                <h3>後台管理系統</h3>
+            </div>
+            <div class="login-box-body">
+                <div id="error-message" style="display:none;" class="alert alert-danger"></div>
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">帳號</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="mdi mdi-account"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control with-icon" id="username" name="username"
+                                placeholder="請輸入帳號" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">密碼</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="mdi mdi-lock"></i>
+                                </span>
+                            </div>
+                            <input type="password" class="form-control with-icon" id="password" name="password"
+                                placeholder="請輸入密碼" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-login">登入</button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-3">
+                    <small class="text-muted">
+                        預設帳號：kuma / 密碼：kuma!2022
+                    </small>
+                </div>
+            </div>
+            <div class="login-footer">
+                © 2026 大灣藥局. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/libscripts.bundle.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#login-form').on('submit', function (e) {
+                e.preventDefault();
+
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                $.ajax({
+                    url: 'http://localhost:5000/login',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        username: username,
+                        password: password
+                    }),
+                    success: function (response) {
+                        if (response.success) {
+                            window.location.href = response.redirect;
+                        } else {
+                            $('#error-message').text(response.message).show();
+                        }
+                    },
+                    error: function () {
+                        $('#error-message').text('登入失敗，請稍後再試').show();
+                    }
+                });
+            });
+
+            // 點擊input時隱藏錯誤訊息
+            $('input').on('focus', function () {
+                $('#error-message').hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
