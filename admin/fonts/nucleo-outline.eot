@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="TZqzRJ3mjMG5TkAw2bfrEVpr11o0Yg1c6BFDyFMc">
+<meta name="index-url" content="https://info.ouorange.com/kuma.com">
+    <meta property="og:site_name" content="庫瑪生技">
+<meta property="og:url" content="https://info.ouorange.com/kuma.com/admin_assets/fonts/nucleo-outline.eot">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://info.ouorange.com/kuma.com/img/logo/logo-og.png">
+    <meta property="og:title" content="庫瑪生技">
+    <meta property="og:description" content="庫瑪生技">
+    <meta name="description" content="庫瑪生技">
+    <title>庫瑪生技</title>
+
+    <link rel="icon" href="https://info.ouorange.com/kuma.com/img/ico/favicon.png">
+<link rel="stylesheet" type="text/css" href="https://info.ouorange.com/kuma.com/assets/pages/css/master.css">
+<link rel="stylesheet" type="text/css" href="https://info.ouorange.com/kuma.com/assets/plugins/revolution/css/settings.css">
+<link rel="stylesheet" type="text/css" href="https://info.ouorange.com/kuma.com/assets/plugins/toastr/toastr.min.css">
+        <link rel="stylesheet" type="text/css" href="https://info.ouorange.com/kuma.com/assets/pages/css/main.css">
+<link rel="stylesheet" type="text/css" href="https://info.ouorange.com/kuma.com/assets/pages/css/style.css">
+    <link rel='stylesheet' type='text/css' property='stylesheet' href='/kuma.com/_debugbar/assets/stylesheets?v=1763541085' data-turbolinks-eval='false' data-turbo-eval='false'><script src='/kuma.com/_debugbar/assets/javascript?v=1763541085' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval='false'>jQuery.noConflict(true);</script>
+<script> Sfdump = window.Sfdump || (function (doc) { doc.documentElement.classList.add('sf-js-enabled'); var rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' sf-dump-hover'; elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .sf-js-enabled .phpdebugbar pre.sf-dump .sf-dump-compact, .sf-js-enabled .sf-dump-str-collapse .sf-dump-str-collapse, .sf-js-enabled .sf-dump-str-expand .sf-dump-str-expand { display: none; } .sf-dump-hover:hover { background-color: #B729D9; color: #FFF !important; border-radius: 2px; } .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump .sf-dump-ellipsization { display: inline-flex; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis-tail { flex-shrink: 0; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump, pre.sf-dump .sf-dump-default{background-color:#18171B; color:#FF8400; line-height:1.2em; font:12px Menlo, Monaco, Consolas, monospace; word-wrap: break-word; white-space: pre-wrap; position:relative; z-index:99999; word-break: break-all}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-str{font-weight:bold; color:#56DB3A}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ref{color:#A0A0A0}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-public{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-protected{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-private{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-key{color:#56DB3A}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis{color:#FF8400}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
+</head>
+
+<body data-mobile-nav-style="classic">
+    <header id="mad-header" class="mad-header header-2">
+            <div class="mad-pre-header">
+            <div class="container-fluid">
+                <div class="mad-header-items marquee">
+                    <div class="mad-header-item">
+                        <div class="mad-shipping">
+                            <p>接到陌生電話勿慌張，先求證06-2712-874，或至官方LINE@(ID：@kumashop)諮詢</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mad-header-section--sticky-xl">
+        <div class="container header-container">
+            <div class="row align-items-center header-minddle">
+                <div class="header-logo">
+                    <a href="https://info.ouorange.com/kuma.com" class="mad-logo"><img
+                            src="https://info.ouorange.com/kuma.com/assets/images/logo.png" alt="庫瑪生活藥妝"></a>
+                </div>
+                <div class="header-center">
+                    <nav class="mad-navigation-container navigation-desktop">
+                        <ul class="mad-navigation mad-navigation--vertical-sm">
+                            <li class="menu-item">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com">
+                                    <img class="iconStyle" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-home.png"
+                                        alt="首頁" />
+                                    <span>首&emsp; 頁</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-has-children mega-menu">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com/products">
+                                    <img class="iconStyle"
+                                        src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/regular-buy-icon-n.png"
+                                        alt="全館商品">
+                                    <span>全館商品</span>
+                                </a>
+                                <ul class="sub-menu">
+                                                                                                                        <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/628"
+                                                    class="sub-title">分類測試</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/633">小小分類1</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/634">小小小分類</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/629">分類測試:展開、小分類刪除</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/630">小分類1</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/631">小分類2</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/471"
+                                                    class="sub-title">快閃分類2層測試 主</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/476">1-2</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/473">2-一層</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/617">11</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/477">2-1</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/474">2-2</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/565"
+                                                    class="sub-title">🎉特惠活動</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/637">滿額享折扣</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/566">⚡快閃下殺</a>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/18"
+                                                    class="sub-title">💊保健品</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/510">🎁送禮最窩心</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/511">🔔保健優良品</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/512">🚴健身運動</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/454">⭐精選品牌</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/611">生達醫研</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/614">生達活沛/醫美</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/613">景岳-固醣樂</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/642">大漢酵素</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/20">成人保健營養</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/449">左旋麩醯胺酸</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/448">孕媽咪適用</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/447">維生素/礦物質</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/446">益生菌/酵素/纖維</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/445">晶亮清澈</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/444">魚油DHA/EPA</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/443">鈣/關節靈活</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/622">富含藻類</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/441">好眠美顏的秘訣</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/440">銀髮養生法寶</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/439">靈芝養蔘族</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/438">精氣神活力</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/437">電解質</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/436">♂男性專屬</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/434">♀️女性專屬</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/621">癌友營養首選</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/432">孩童保健品</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/465">🎁超值禮品組</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/462">👶寶寶餅乾</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/461">孩童成長關鍵</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/460">孩童維生素/礦物質</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/459">孩童益生菌/酵素</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/458">孩童晶亮清澈</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/457">孩童魚油DHA/EPA</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/456">孩童電解質</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/415">健康字號食品</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/433">電台熱銷品</a>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/22"
+                                                    class="sub-title">💄美妝品牌</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/507">🎁美妝超值組</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/479">各大品牌</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/492">理膚寶水</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/491">適樂膚</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/490">薇姿</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/489">舒特膚</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/488">日本悠斯晶</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/487">日本娜芙</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/486">潔美淨</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/485">愛可妮</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/484">吉爾伯特</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/483">賽吉兒</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/480">功能分類</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/506">敏感肌適用</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/505">油痘肌適用</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/504">臉部清潔</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/503">保濕乳霜乳液</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/502">保濕精華</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/501">身體清潔護理</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/500">頭皮清潔護理</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/499">防曬底妝隔離乳</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/498">護膚面膜</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/497">眼脣護理</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/534">染髮劑</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/496">護手霜</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/481">寶寶系列</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/568">🎁超值組合</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/569">寶寶身體清潔</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/570">寶寶身體保濕乳</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/571">寶寶臉部防曬</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/37"
+                                                    class="sub-title">🥛營養奶粉/奶水</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/514">🎁特殊優惠</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/516">成人營養</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/518">一般營養/即飲</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/519">一般營養/粉狀</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/520">10%蛋白質</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/521">18%蛋白質</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/522">鉻100</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/523">植物蛋白</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/524">麩醯胺酸</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/517">特定疾病配方</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/525">特殊營養/即飲</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/526">特殊營養/粉狀</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/527">癌症專用</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/528">管灌/均衡營養</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/529">糖尿病適用</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/530">洗腎/透析配方</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/531">未洗腎配方</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/532">肺部疾病適用</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/533">創傷系列</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/38"
+                                                    class="sub-title">🩺醫材及用品</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/535">🎁防疫優惠首選</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/536">保健箱自選自配</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/537">醫療器材精選品牌</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/549">3M</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/550">英商史耐輝</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/551">飛宜得/倍舒痕</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/552">三樂事</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/553">德國博依</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/554">醫技</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/555">歐姆龍</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/556">TANITA</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/557">藥聯得力</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/558">其他品牌</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/538">醫療口罩手套</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/539">傷口護理</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/572">人工皮</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/573">免縫膠帶</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/574">傷口護膜/凝膠</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/575">OK繃系列</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/576">紗布/繃帶</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/577">棉棒/棉片</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/578">透氣膠帶</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/579">疤痕護理</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/580">痘痘貼</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/581">其他配件</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/540">酒精系列</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/541">鼻腔護理</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/542">口腔護理</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/582">假牙清潔</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/583">口腔噴劑/凝膠</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/543">冷/熱敷用品</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/544">耳溫/額溫槍</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/545">體脂計</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/546">肢體護具</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/636">運動肌貼</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/635">護具</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/547">衛生清潔</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/623">看護墊/紙尿褲</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/624">衛生棉墊</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/625">潔膚用品</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/626">口腔清潔</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/627">其他配件/用品</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/548">輔具用品</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/589">拐杖/手杖</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/590">助行器</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/591">輪椅</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/592">沐浴/便器椅</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/593">電動/氣墊床</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/594">步行推車</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/595">其他配件</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/559">血壓/血糖機</a>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/39"
+                                                    class="sub-title">🧰乙類成藥</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/560">❄暖冬商品</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/561">🎁精選特惠</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/562">口腔護理清潔</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/563">75%酒精/乾洗手</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/564">外用塗抹</a>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                                                                                <li class="menu-item menu-item-has-children">
+                                                <a href="https://info.ouorange.com/kuma.com/products/categories/40"
+                                                    class="sub-title">✂日常生活用品</a>
+                                                <ul class="sub-menu">
+                                                                                                                                                                        <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/596">衛生用品類</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/599">成人紙尿褲/看護墊</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/600">衛生棉墊</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/608">濕紙巾</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/609">口腔清潔</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/610">其他配件</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/597">寶寶安全座椅</a>
+                                                            </li>
+                                                                                                                                                                                                                                <li class="menu-item">
+                                                                <a
+                                                                    href="https://info.ouorange.com/kuma.com/products/categories/598">居家常備品</a>
+                                                                <div class="dropdown-submenu-content">
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/603">冬季暖暖包</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/604">磁力項圈/貼</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/605">氧氣瓶</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/606">一條根</a>
+                                                                                                                                            <a class="hover-underline-animation"
+                                                                            href="https://info.ouorange.com/kuma.com/products/categories/607">防蚊液</a>
+                                                                                                                                    </div>
+                                                            </li>
+                                                                                                                                                            </ul>
+                                            </li>
+                                                                                                            </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com/activity">
+                                    <img class="iconStyle" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-news-n.png"
+                                        alt="特惠活動">
+                                    <span>特惠活動</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com/coupon">
+                                    <img class="iconStyle" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-tag-n.png"
+                                        alt="優惠券">
+                                    <span>優 惠 券</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com/information">
+                                    <img class="iconStyle" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/info-icon-n.png"
+                                        alt="衛教資訊">
+                                    <span>衛教資訊</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com/recipe">
+                                    <img class="iconStyle" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/cook-icon-n.png"
+                                        alt="食譜">
+                                    <span>食&emsp; 譜</span>
+                                </a>
+                            </li>
+                                                            <li class="menu-item">
+                                    
+                                    <a class="menu-custom" href="https://info.ouorange.com/kuma.com/gift">
+                                        <img class="iconStyle"
+                                            src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/regular-buy-icon-n.png"
+                                            alt="贈品">
+                                        <span>贈&emsp; 品</span>
+                                    </a>
+                                </li>
+                                                                                        <li class="menu-item">
+                                    <a class="menu-custom" href="https://info.ouorange.com/kuma.com/login">
+                                        <img class="iconStyle"
+                                            src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-member-n.png"
+                                            alt="會員登入">
+                                        <span>會員登入</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-custom" href="https://info.ouorange.com/kuma.com/search-order">
+                                        <img class="iconStyle"
+                                            src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-search.png"
+                                            alt="訂單查詢">
+                                        <span>訂單查詢</span>
+                                    </a>
+                                </li>
+                                                        <li class="menu-item">
+                                <a class="menu-custom" href="https://info.ouorange.com/kuma.com/cart">
+                                    <img class="iconStyle" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-cart-n.png"
+                                        alt="購物車">
+                                    <span class="cart-count">0</span>
+                                    <span>購 物 車</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="service-phone">
+                    <form action="https://info.ouorange.com/kuma.com/products/search">
+                        <div class="mad-search-section">
+                            <input type="text" name="search" placeholder="搜尋商品">
+                            <button type="submit"><i class="far fa-search"></i></button>
+                        </div>
+                    </form>
+                    <img class="svg" src="https://info.ouorange.com/kuma.com/assets/images/kuma-icon/icon-services.png"
+                        style="width: 90px">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h1 class="display-1">404</h1>
+                <h2>頁面未找到</h2>
+                <p class="lead">抱歉，您訪問的頁面不存在。</p>
+                <a href="https://info.ouorange.com/kuma.com" class="btn btn-primary">返回首頁</a>
+            </div>
+        </div>
+    </div>
+    <footer id="mad-footer" class="mad-footer footer-2">
+    <div class="mad-footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-4">
+                    <section class="mad-widget">
+                        <h6 class="mad-widget-title">藥商執照</h6>
+                        <div class="mad-vr-list">
+                            <ul>
+                                <li>藥商(局)許可執照字號:九一商字第09105509號</li>
+                                <li>藥商(局)名稱：大灣藥局</li>
+                                <li>藥商(局)地址: <a href="https://maps.app.goo.gl/vmMXG5dp5K1RRXQg8"
+                                        target="_blank">台南市永康區民族路298號</a></li>
+                                <li>藥商(局)諮詢專線電話: <a href="tel:062712874" target="_blank">06-2712874</a></li>
+                                <li>藥商(局)諮詢信箱: <a href="mailto:dwpharmacy002@gmail.com"
+                                        target="_blank">dwpharmacy002@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="mad-widget">
+                        <h6 class="mad-widget-title">食品業者登錄字號</h6>
+                        <div class="mad-vr-list">
+                            <ul>
+                                <li>D-200009045-00001-1</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="mad-widget">
+                        <h6 class="mad-widget-title">統一編號</h6>
+                        <div class="mad-vr-list">
+                            <ul>
+                                <li>73005565</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-xl-2 col-md-4">
+                    <section class="mad-widget">
+                        <h6 class="mad-widget-title">快速連結</h6>
+                        <div class="mad-vr-list">
+                            <ul>
+                                <li><a href="https://info.ouorange.com/kuma.com/products" class="mad-link">全館商品</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/activity" class="mad-link">特惠活動</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/coupon" class="mad-link">優惠券</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/information" class="mad-link">衛教資訊</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/recipe" class="mad-link">食譜</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/contact" class="mad-link">聯絡我們</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/notice" class="mad-link">購物須知</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/privacy" class="mad-link">隱私權政策聲明</a></li>
+                                <li><a href="https://info.ouorange.com/kuma.com/policy" class="mad-link">網站安全政策聲明</a></li>
+                                
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-xl-3 col-md-12">
+                    <div class="content-element-6">
+                        <h6 class="mad-widget-title">友站連結</h6>
+                        <div class="footer-brand-img">
+                                                            <a href="https://info.ouorange.com/kuma-v2.com" class="brand-link" target="_blank">
+                                    <img src="https://info.ouorange.com/kuma.com/upload/logo/2KPfKP5L0gw04mcnYDaEtrswPRQE2GMr8Y7kOzve.png" alt="景岳">
+                                </a>
+                                                            <a href="https://info.ouorange.com/kuma-v1.com/" class="brand-link" target="_blank">
+                                    <img src="https://info.ouorange.com/kuma.com/upload/logo/lXYQBqlRA5DJ4XZycjZ0pB7fo7TPaU5uBPrxUZZd.jpg" alt="癌症營養照護專賣">
+                                </a>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mad-footer-bottom">
+                <p class="copyrights">&copy; 2022 大灣藥局 版權所有 KUMA All Rights Reserved. Design by <a
+                        class="ouorange-color" href="//ouorange.com">OUORANGE</a></p>
+                <div class="mad-social-icons">
+                    <ul>
+                        <li><a href="https://www.facebook.com/DAWAN.PHARMACY/?locale=zh_TW" title="大灣藥局粉絲專頁"
+                                target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://lin.ee/zdI8Mjs" title="大灣藥局LINE" target="_blank"><i
+                                    class="fab fa-line"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright__section">
+        <p>&copy; 本站所有內容受智慧財產權保護，禁止轉貼、修改、散布、展示、轉寄本站所有內容</p>
+    </div>
+</footer>
+<div id="fb-root"></div>
+<div id="fb-customer-chat" class="fb-customerchat"></div>
+<div class="community-btn">
+    <a href="https://m.me/273929872624193" rel="noopener noreferrer" target="_blank">
+        <img src="https://info.ouorange.com/kuma.com/assets/images/fb.png" alt="Facebook" height="45" border="0">
+    </a>
+    <a href="https://lin.ee/zdI8Mjs" rel="noopener noreferrer" target="_blank">
+        <img src="https://info.ouorange.com/kuma.com/assets/images/line.png" alt="LINE" height="45" border="0">
+    </a>
+</div>
+    <script src="https://info.ouorange.com/kuma.com/assets/plugins/modernizr/modernizr.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/base/base.min.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/plugins/monkeysan/monkeysan.jquery.nav.1.0.min.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/pages/components/mad.customselect.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/pages/components/mad.sticky-header-section.min.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/plugins/jquery.easing.1.3.min.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/plugins/toastr/toastr.min.js"></script>
+<script src="https://info.ouorange.com/kuma.com/assets/pages/js/main.js"></script>
+        <script type="text/javascript">
+var phpdebugbar = new PhpDebugBar.DebugBar({"theme":"auto","hideEmptyTabs":true});
+phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"tags","order":-100,"title":"Request", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock-o","tooltip":"Request Duration","link":"timeline"}), "right");
+phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"tasks","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
+phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"cogs","tooltip":"Memory Usage"}), "right");
+phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
+phpdebugbar.addIndicator("version", new PhpDebugBar.DebugBar.Indicator({"icon":"laravel phpdebugbar-fab"}), "right");
+phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"leaf","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelQueriesWidget()}));
+phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({"icon":"cubes","title":"Models", "widget": new PhpDebugBar.Widgets.TableVariableListWidget()}));
+phpdebugbar.addTab("emails", new PhpDebugBar.DebugBar.Tab({"icon":"inbox","title":"Mails", "widget": new PhpDebugBar.Widgets.MailsWidget()}));
+phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("currentrequest", new PhpDebugBar.DebugBar.Indicator({"icon":"share","link":"request"}), "right");
+phpdebugbar.setDataMap({
+"request": ["request.data", {}],
+"messages": ["messages.messages", []],
+"messages:badge": ["messages.count", null],
+"time": ["time.duration_str", '0ms'],
+"timeline": ["time", {}],
+"memory": ["memory.peak_usage_str", '0B'],
+"exceptions": ["exceptions.exceptions", []],
+"exceptions:badge": ["exceptions.count", null],
+"version": ["laravel.version", ],
+"version:tooltip": ["laravel.tooltip", {}],
+"views": ["views", []],
+"views:badge": ["views.nb_templates", 0],
+"queries": ["queries", []],
+"queries:badge": ["queries.nb_statements", 0],
+"models": ["models", {}],
+"models:badge": ["models.count", 0],
+"emails": ["symfonymailer_mails.mails", []],
+"emails:badge": ["symfonymailer_mails.count", null],
+"gate": ["gate.messages", []],
+"gate:badge": ["gate.count", null],
+"request:badge": ["request.badge", null],
+"currentrequest": ["request.data.uri", ],
+"currentrequest:tooltip": ["request.tooltip", {}]
+});
+phpdebugbar.restoreState();
+phpdebugbar.enableAjaxHandlerTab();
+phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+phpdebugbar.ajaxHandler.bindToFetch();
+phpdebugbar.ajaxHandler.bindToXHR();
+phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"https:\/\/info.ouorange.com\/kuma.com\/_debugbar\/open"}));
+phpdebugbar.addDataSet({"__meta":{"id":"01KP2WG2SGPNFHJ77N9727B0M1","datetime":"2026-04-13 15:39:33","utime":1776065973.040195,"method":"GET","uri":"\/kuma.com\/admin_assets\/fonts\/nucleo-outline.eot","ip":"27.52.3.120"},"messages":{"count":0,"messages":[]},"time":{"count":13,"start":1776065972.968142,"end":1776065973.040208,"duration":0.07206606864929199,"duration_str":"72.07ms","measures":[{"label":"Booting","start":1776065972.968142,"relative_start":0,"end":1776065973.002547,"relative_end":1776065973.002547,"duration":0.03440499305725098,"duration_str":"34.4ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Application","start":1776065973.002562,"relative_start":0.034420013427734375,"end":1776065973.040211,"relative_end":2.86102294921875e-6,"duration":0.037648916244506836,"duration_str":"37.65ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Routing","start":1776065973.004722,"relative_start":0.03658008575439453,"end":1776065973.006801,"relative_end":1776065973.006801,"duration":0.0020787715911865234,"duration_str":"2.08ms","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null},{"label":"View: errors.404","start":1776065973.031719,"relative_start":0.06357693672180176,"end":1776065973.031719,"relative_end":1776065973.031719,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.master","start":1776065973.032105,"relative_start":0.06396293640136719,"end":1776065973.032105,"relative_end":1776065973.032105,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.charset","start":1776065973.032308,"relative_start":0.06416606903076172,"end":1776065973.032308,"relative_end":1776065973.032308,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.meta-keyword","start":1776065973.03255,"relative_start":0.0644080638885498,"end":1776065973.03255,"relative_end":1776065973.03255,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.header-css","start":1776065973.032818,"relative_start":0.06467604637145996,"end":1776065973.032818,"relative_end":1776065973.032818,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.header-menu","start":1776065973.033052,"relative_start":0.0649099349975586,"end":1776065973.033052,"relative_end":1776065973.033052,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.footer","start":1776065973.038961,"relative_start":0.07081890106201172,"end":1776065973.038961,"relative_end":1776065973.038961,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.footer-js","start":1776065973.039418,"relative_start":0.07127594947814941,"end":1776065973.039418,"relative_end":1776065973.039418,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"View: web.layouts.message","start":1776065973.039671,"relative_start":0.07152891159057617,"end":1776065973.039671,"relative_end":1776065973.039671,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"View"},{"label":"Preparing Response","start":1776065973.039868,"relative_start":0.07172608375549316,"end":1776065973.039941,"relative_end":1776065973.039941,"duration":7.295608520507812e-5,"duration_str":"73\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null}]},"memory":{"peak_usage":4452960,"peak_usage_str":"4MB"},"exceptions":{"count":0,"exceptions":[]},"laravel":{"version":"10.x","tooltip":{"Laravel Version":"10.50.0","PHP Version":"8.2.12","Environment":"local","Debug Mode":"Enabled","URL":"info.ouorange.com\/kuma.com","Timezone":"Asia\/Taipei","Locale":"zh-TW"}},"views":{"count":9,"nb_templates":9,"templates":[{"name":"errors.404","param_count":null,"params":[],"start":1776065973.031692,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/errors\/404.blade.phperrors.404","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Ferrors%2F404.blade.php\u0026line=1","ajax":false,"filename":"404.blade.php","line":"?"}},{"name":"web.layouts.master","param_count":null,"params":[],"start":1776065973.032085,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/master.blade.phpweb.layouts.master","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fmaster.blade.php\u0026line=1","ajax":false,"filename":"master.blade.php","line":"?"}},{"name":"web.layouts.charset","param_count":null,"params":[],"start":1776065973.032289,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/charset.blade.phpweb.layouts.charset","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fcharset.blade.php\u0026line=1","ajax":false,"filename":"charset.blade.php","line":"?"}},{"name":"web.layouts.meta-keyword","param_count":null,"params":[],"start":1776065973.032531,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/meta-keyword.blade.phpweb.layouts.meta-keyword","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fmeta-keyword.blade.php\u0026line=1","ajax":false,"filename":"meta-keyword.blade.php","line":"?"}},{"name":"web.layouts.header-css","param_count":null,"params":[],"start":1776065973.032799,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/header-css.blade.phpweb.layouts.header-css","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fheader-css.blade.php\u0026line=1","ajax":false,"filename":"header-css.blade.php","line":"?"}},{"name":"web.layouts.header-menu","param_count":null,"params":[],"start":1776065973.033033,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/header-menu.blade.phpweb.layouts.header-menu","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fheader-menu.blade.php\u0026line=1","ajax":false,"filename":"header-menu.blade.php","line":"?"}},{"name":"web.layouts.footer","param_count":null,"params":[],"start":1776065973.038941,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/footer.blade.phpweb.layouts.footer","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Ffooter.blade.php\u0026line=1","ajax":false,"filename":"footer.blade.php","line":"?"}},{"name":"web.layouts.footer-js","param_count":null,"params":[],"start":1776065973.039398,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/footer-js.blade.phpweb.layouts.footer-js","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Ffooter-js.blade.php\u0026line=1","ajax":false,"filename":"footer-js.blade.php","line":"?"}},{"name":"web.layouts.message","param_count":null,"params":[],"start":1776065973.039652,"type":"blade","hash":"bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/message.blade.phpweb.layouts.message","xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fmessage.blade.php\u0026line=1","ajax":false,"filename":"message.blade.php","line":"?"}}]},"queries":{"count":12,"nb_statements":12,"nb_visible_statements":12,"nb_excluded_statements":0,"nb_failed_statements":0,"accumulated_duration":0.00529,"accumulated_duration_str":"5.29ms","memory_usage":0,"memory_usage_str":null,"statements":[{"sql":"select * from `sub_lists` where `id` = 1 and `enabled` = \u0027Y\u0027 and `sub_lists`.`deleted_at` is null limit 1","type":"query","params":[],"bindings":[1,"Y"],"hints":null,"show_copy":true,"backtrace":[{"index":17,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":29},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":21,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":22,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.0082102,"duration":0.00047999999999999996,"duration_str":"480\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:29","source":{"index":17,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":29},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=29","ajax":false,"filename":"WebController.php","line":"29"},"connection":"kuma","explain":null,"start_percent":0,"width_percent":9.074},{"sql":"select * from `sub0s` where `sub0s`.`id` = 1 limit 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":21,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":30},{"index":22,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":24,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":25,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":26,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.01018,"duration":0.00031,"duration_str":"310\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:30","source":{"index":21,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":30},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=30","ajax":false,"filename":"WebController.php","line":"30"},"connection":"kuma","explain":null,"start_percent":9.074,"width_percent":5.86},{"sql":"select exists(select * from `visit_ips` where `visit_ips`.`ipable_type` = \u0027App\\\\Models\\\\SubList\u0027 and `visit_ips`.`ipable_id` = 1 and `visit_ips`.`ipable_id` is not null and `ip` = \u0027\u001b4\u0003x\u0027 and `expired_at` \u003E \u00272026-04-13 15:39:33\u0027) as `exists`","type":"query","params":[],"bindings":["App\\Models\\SubList",1,"\u001b4\u0003x","2026-04-13 15:39:33"],"hints":null,"show_copy":true,"backtrace":[{"index":14,"namespace":null,"name":"app\/Libraries\/VisitHandler.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Libraries\\VisitHandler.php","line":21},{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":33},{"index":16,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50}],"start":1776065973.0117838,"duration":0.0011,"duration_str":"1.1ms","slow":false,"memory":0,"memory_str":null,"filename":"VisitHandler.php:21","source":{"index":14,"namespace":null,"name":"app\/Libraries\/VisitHandler.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Libraries\\VisitHandler.php","line":21},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FLibraries%2FVisitHandler.php\u0026line=21","ajax":false,"filename":"VisitHandler.php","line":"21"},"connection":"kuma","explain":null,"start_percent":14.934,"width_percent":20.794},{"sql":"select * from `keywords` where `page` in (\u0027\/\u0027, null) and `sub_list_id` = 1 and `enabled` = \u0027Y\u0027","type":"query","params":[],"bindings":["\/",null,1,"Y"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":60},{"index":16,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.014528,"duration":0.00032,"duration_str":"320\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:60","source":{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":60},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=60","ajax":false,"filename":"WebController.php","line":"60"},"connection":"kuma","explain":null,"start_percent":35.728,"width_percent":6.049},{"sql":"select * from `contents` where `sub_list_id` = 1 and `page` in (\u0027analytics\u0027, \u0027contact\u0027)","type":"query","params":[],"bindings":[1,"analytics","contact"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":68},{"index":16,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.016165,"duration":0.00022,"duration_str":"220\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:68","source":{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":68},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=68","ajax":false,"filename":"WebController.php","line":"68"},"connection":"kuma","explain":null,"start_percent":41.777,"width_percent":4.159},{"sql":"select * from `index_settings` where `sub_list_id` = 1 limit 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":17,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":80},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":21,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":22,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.0177112,"duration":0.00031,"duration_str":"310\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:80","source":{"index":17,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":80},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=80","ajax":false,"filename":"WebController.php","line":"80"},"connection":"kuma","explain":null,"start_percent":45.936,"width_percent":5.86},{"sql":"select * from `images` where `web` = \u0027index-setting\u0027 and `images`.`has_id` in (1) order by `sort` asc, `id` desc","type":"query","params":[],"bindings":["index-setting"],"hints":null,"show_copy":true,"backtrace":[{"index":22,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":80},{"index":23,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":25,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":26,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":27,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.019262,"duration":0.00033,"duration_str":"330\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:80","source":{"index":22,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":80},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=80","ajax":false,"filename":"WebController.php","line":"80"},"connection":"kuma","explain":null,"start_percent":51.796,"width_percent":6.238},{"sql":"select * from `product_categories` where `category_id` is null and `sub_list_id` = 1 and `enabled` = \u0027Y\u0027 and `product_categories`.`deleted_at` is null order by `sort` asc, `id` desc","type":"query","params":[],"bindings":[1,"Y"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":95},{"index":16,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.020795,"duration":0.00035,"duration_str":"350\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:95","source":{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":95},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=95","ajax":false,"filename":"WebController.php","line":"95"},"connection":"kuma","explain":null,"start_percent":58.034,"width_percent":6.616},{"sql":"select * from `product_categories` where `product_categories`.`category_id` in (1, 18, 22, 37, 38, 39, 40, 471, 565, 628) and `sub_list_id` = 1 and `enabled` = \u0027Y\u0027 and `product_categories`.`deleted_at` is null order by `sort` asc, `id` desc, `sort` asc, `id` desc","type":"query","params":[],"bindings":[1,"Y"],"hints":null,"show_copy":true,"backtrace":[{"index":20,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":95},{"index":21,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":23,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":24,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":25,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.022479,"duration":0.00046,"duration_str":"460\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:95","source":{"index":20,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":95},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=95","ajax":false,"filename":"WebController.php","line":"95"},"connection":"kuma","explain":null,"start_percent":64.65,"width_percent":8.696},{"sql":"select * from `product_categories` where `product_categories`.`category_id` in (20, 415, 432, 433, 454, 473, 476, 479, 480, 481, 507, 510, 511, 512, 514, 516, 517, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 559, 560, 561, 562, 563, 564, 566, 596, 597, 598, 629, 633, 637) and `sub_list_id` = 1 and `enabled` = \u0027Y\u0027 and `product_categories`.`deleted_at` is null order by `sort` asc, `id` desc, `sort` asc, `id` desc","type":"query","params":[],"bindings":[1,"Y"],"hints":null,"show_copy":true,"backtrace":[{"index":25,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":95},{"index":26,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":28,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":29,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":30,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.024533,"duration":0.0007099999999999999,"duration_str":"710\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:95","source":{"index":25,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":95},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=95","ajax":false,"filename":"WebController.php","line":"95"},"connection":"kuma","explain":null,"start_percent":73.346,"width_percent":13.422},{"sql":"select exists(select * from `shoppingcart` where `identifier` = \u00274ZCC0YGevv3wSQnnQK4NCNjodna72tmlkjclWWoF\u0027 and `instance` = \u00271\u0027) as `exists`","type":"query","params":[],"bindings":["4ZCC0YGevv3wSQnnQK4NCNjodna72tmlkjclWWoF","1"],"hints":null,"show_copy":true,"backtrace":[{"index":10,"namespace":null,"name":"vendor\/hardevine\/shoppingcart\/src\/Cart.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\hardevine\\shoppingcart\\src\\Cart.php","line":518},{"index":11,"namespace":null,"name":"vendor\/hardevine\/shoppingcart\/src\/Cart.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\hardevine\\shoppingcart\\src\\Cart.php","line":384},{"index":12,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":99},{"index":13,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":15,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.027814,"duration":0.0004,"duration_str":"400\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"Cart.php:518","source":{"index":10,"namespace":null,"name":"vendor\/hardevine\/shoppingcart\/src\/Cart.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\hardevine\\shoppingcart\\src\\Cart.php","line":518},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fvendor%2Fhardevine%2Fshoppingcart%2Fsrc%2FCart.php\u0026line=518","ajax":false,"filename":"Cart.php","line":"518"},"connection":"kuma","explain":null,"start_percent":86.767,"width_percent":7.561},{"sql":"select * from `logos` where `enabled` = \u0027Y\u0027 order by `sort` asc, `id` asc","type":"query","params":[],"bindings":["Y"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":105},{"index":16,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":165},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php","line":50},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":183}],"start":1776065973.0294302,"duration":0.0003,"duration_str":"300\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"WebController.php:105","source":{"index":15,"namespace":null,"name":"app\/Http\/Controllers\/WebController.php","file":"D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\WebController.php","line":105},"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWebController.php\u0026line=105","ajax":false,"filename":"WebController.php","line":"105"},"connection":"kuma","explain":null,"start_percent":94.329,"width_percent":5.671}]},"models":{"data":{"App\\Models\\ProductCategory":{"retrieved":176,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FProductCategory.php\u0026line=1","ajax":false,"filename":"ProductCategory.php","line":"?"}},"App\\Models\\Image":{"retrieved":4,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FImage.php\u0026line=1","ajax":false,"filename":"Image.php","line":"?"}},"App\\Models\\Content":{"retrieved":2,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FContent.php\u0026line=1","ajax":false,"filename":"Content.php","line":"?"}},"App\\Models\\Logo":{"retrieved":2,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FLogo.php\u0026line=1","ajax":false,"filename":"Logo.php","line":"?"}},"App\\Models\\SubList":{"retrieved":1,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FSubList.php\u0026line=1","ajax":false,"filename":"SubList.php","line":"?"}},"App\\Models\\Sub0":{"retrieved":1,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FSub0.php\u0026line=1","ajax":false,"filename":"Sub0.php","line":"?"}},"App\\Models\\Keyword":{"retrieved":1,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FKeyword.php\u0026line=1","ajax":false,"filename":"Keyword.php","line":"?"}},"App\\Models\\IndexSetting":{"retrieved":1,"xdebug_link":{"url":"phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FIndexSetting.php\u0026line=1","ajax":false,"filename":"IndexSetting.php","line":"?"}}},"count":188,"key_map":{"retrieved":"Retrieved","created":"Created","updated":"Updated","deleted":"Deleted"},"is_counter":true,"badges":{"retrieved":188}},"symfonymailer_mails":{"count":0,"mails":[]},"gate":{"count":0,"messages":[]},"request":{"data":{"status":"404 Not Found","full_url":"https:\/\/info.ouorange.com\/kuma.com\/admin_assets\/fonts\/nucleo-outline.eot","action_name":null,"controller_action":"App\\Http\\Controllers\\Web\\ErrorController@show404","uri":"GET {fallbackPlaceholder}","controller":"App\\Http\\Controllers\\Web\\ErrorController@show404\u003Ca href=\u0022phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWeb%2FErrorController.php\u0026line=12\u0022 class=\u0022phpdebugbar-widgets-editor-link\u0022\u003E\u003C\/a\u003E","file":"\u003Ca href=\u0022phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FWeb%2FErrorController.php\u0026line=12\u0022 onclick=\u0022\u0022 class=\u0022phpdebugbar-widgets-editor-link\u0022\u003Eapp\/Http\/Controllers\/Web\/ErrorController.php:12-19\u003C\/a\u003E","middleware":"web","duration":"68.51ms","peak_memory":"6MB","response":"text\/html; charset=UTF-8","request_format":"html","request_query":"\u003Cpre class=sf-dump id=sf-dump-1754862957 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1754862957\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_request":"\u003Cpre class=sf-dump id=sf-dump-1519322512 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1519322512\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_headers":"\u003Cpre class=sf-dump id=sf-dump-982925935 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:3\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Ehost\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002217 characters\u0022\u003Einfo.ouorange.com\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Euser-agent\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002210 characters\u0022\u003Ecurl\/8.1.2\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00223 characters\u0022\u003E*\/*\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-982925935\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_cookies":"\u003Cpre class=sf-dump id=sf-dump-1089606147 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1089606147\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","response_headers":"\u003Cpre class=sf-dump id=sf-dump-1971612322 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:3\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Ecache-control\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002217 characters\u0022\u003Eno-cache, private\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Edate\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002229 characters\u0022\u003EMon, 13 Apr 2026 07:39:33 GMT\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Econtent-type\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002224 characters\u0022\u003Etext\/html; charset=UTF-8\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1971612322\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","session_attributes":"\u003Cpre class=sf-dump id=sf-dump-696515842 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003E_token\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003ETZqzRJ3mjMG5TkAw2bfrEVpr11o0Yg1c6BFDyFMc\u003C\/span\u003E\u0022\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-696515842\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n"},"tooltip":{"status":"404 Not Found","full_url":"https:\/\/info.ouorange.com\/kuma.com\/admin_assets\/fonts\/nucleo-outline.eot","controller_action":"App\\Http\\Controllers\\Web\\ErrorController@show404"},"badge":"404 Not Found"}}, "01KP2WG2SGPNFHJ77N9727B0M1");
+
+</script>
+</body>
+
+</html>
