@@ -24,6 +24,11 @@ package-lock.json
 /image/
 /extracted_index.html
 /其他網站原始碼/
+/login/
+
+# 機密資料 - 參考圖片包含敏感資訊
+/參考圖片/
+參考圖片/
 
 # 備份檔案
 admin/index.html.backup

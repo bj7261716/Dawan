@@ -1,0 +1,179 @@
+.announce-section {
+	font-size: 0.9rem;
+	text-align: center;
+	background-color: rgba(246, 246, 254, 0.2);
+	box-shadow: rgba(79, 70, 229, 0.25) 1px 2px 5px;
+	border-radius: 10px;
+	padding: 10px 0;
+	max-width: 40%;
+	margin: 0 auto;
+	font-weight: bold;
+	color: #444
+}
+
+.announce-section p {
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
+
+.announce-section li {
+	margin-top: 3px;
+	list-style: none;
+}
+
+.announce-section li::before {
+	content: '\f0ea';
+	font-family: 'FontAwesome';
+	font-weight: 300;
+	color: #4f46e5;
+	margin-right: 5px
+}
+
+.announce-section .line {
+	max-width: 70%;
+	margin: 0 auto;
+	border-radius: 15px;
+	padding: 5px;
+	transition: .2s ease-in-out
+}
+
+.announce-section .line:hover {
+	background-color: rgb(246, 246, 254);
+}
+
+.announce-section a {
+	color: #444
+}
+
+.announce-section a:hover {
+	color: #4f46e5
+}
+
+.background-effect .circles {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.background-effect .circles li {
+	position: absolute;
+	bottom: -150px;
+	display: block;
+	background-color: rgb(79 70 229 / 0.3);
+	-webkit-animation: animate 25s linear infinite;
+	animation: animate 25s linear infinite;
+}
+
+.background-effect .circles li.brand-img:nth-child(1), .background-effect .circles li.brand-img:nth-child(2), .background-effect .circles li.brand-img:nth-child(3), .background-effect .circles li.brand-img:nth-child(4), .background-effect .circles li.brand-img:nth-child(5), .background-effect .circles li.brand-img:nth-child(6), .background-effect .circles li.brand-img:nth-child(7), .background-effect .circles li.brand-img:nth-child(8), .background-effect .circles li.brand-img:nth-child(9), .background-effect .circles li.brand-img:nth-child(10) {
+	background-color: transparent;
+}
+
+.background-effect .circles li:nth-child(1), .background-effect .circles li:nth-child(2), .background-effect .circles li:nth-child(3), .background-effect .circles li:nth-child(4), .background-effect .circles li:nth-child(5), .background-effect .circles li:nth-child(6), .background-effect .circles li:nth-child(7), .background-effect .circles li:nth-child(8), .background-effect .circles li:nth-child(9), .background-effect .circles li:nth-child(10) {
+	height: 2.5rem;
+	width: 2.5rem;
+}
+
+.background-effect .circles li:nth-child(1) {
+	left: 25%;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+.background-effect .circles li:nth-child(2) {
+	left: 10%;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+	-webkit-animation-duration: 12s;
+	animation-duration: 12s;
+}
+
+.background-effect .circles li:nth-child(3) {
+	left: 70%;
+	-webkit-animation-delay: 4s;
+	animation-delay: 4s;
+}
+
+.background-effect .circles li:nth-child(4) {
+	left: 40%;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+	-webkit-animation-duration: 18s;
+	animation-duration: 18s;
+}
+
+.background-effect .circles li:nth-child(5) {
+	left: 65%;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+.background-effect .circles li:nth-child(6) {
+	left: 75%;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+
+.background-effect .circles li:nth-child(7) {
+	left: 35%;
+	-webkit-animation-delay: 7s;
+	animation-delay: 7s;
+}
+
+.background-effect .circles li:nth-child(8) {
+	left: 50%;
+	-webkit-animation-delay: 15s;
+	animation-delay: 15s;
+	-webkit-animation-duration: 45s;
+	animation-duration: 45s;
+}
+
+.background-effect .circles li:nth-child(9) {
+	left: 20%;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+	-webkit-animation-duration: 35s;
+	animation-duration: 35s;
+}
+
+.background-effect .circles li:nth-child(10) {
+	left: 85%;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+	-webkit-animation-duration: 11s;
+	animation-duration: 11s;
+}
+
+@-webkit-keyframes animate {
+	0% {
+		-webkit-transform: translateY(0) rotate(0deg);
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+		border-radius: 10px;
+	}
+
+	100% {
+		-webkit-transform: translateY(-1000px) rotate(720deg);
+		transform: translateY(-1000px) rotate(720deg);
+		opacity: 0;
+	}
+}
+
+@keyframes animate {
+	0% {
+		-webkit-transform: translateY(0) rotate(0deg);
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+		border-radius: 10px;
+	}
+
+	100% {
+		-webkit-transform: translateY(-1000px) rotate(720deg);
+		transform: translateY(-1000px) rotate(720deg);
+		opacity: 0;
+	}
+}

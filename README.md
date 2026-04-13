@@ -1,160 +1,161 @@
-# 大灣藥局 - 後台管理系統
+# 大灣藥局後台管理系統
 
-## 🎉 系統升級完成！
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.0-green.svg)](https://flask.palletsprojects.com/)
 
-本系統已從純前端靜態頁面升級為**完整的全端應用程式**，包含：
-- ✅ Python Flask 後端
-- ✅ SQLite 資料庫
-- ✅ RESTful API
-- ✅ 登入驗證系統
-- ✅ 即時數據統計
-- ✅ 模擬測試數據
+大灣藥局後台管理系統是一個基於 Flask 的全端管理系統，提供訂單管理、商品管理、會員管理、數據統計等完整功能。
 
----
+## ✨ 主要功能
 
-## 🚀 快速開始
+- 🔐 **登入系統** - 安全的 Session 認證機制
+- 📊 **數據儀表板** - 即時統計數據與圖表
+- 📦 **訂單管理** - 完整的訂單處理流程
+- 🛍️ **商品管理** - 商品分類與庫存管理
+- 👥 **會員管理** - 會員資料與積分系統
+- 📝 **內容管理** - 健康文章、食譜、影片
+- 🎁 **促銷活動** - 優惠券、贈品活動
 
-### 一鍵啟動（推薦）⭐
+## 🏗️ 技術架構
 
-#### Windows
-```bash
-雙擊執行 start.bat
-```
+**前端**
+- Bootstrap 5, jQuery, Morris.js, SweetAlert2, Material Design Icons
 
-#### macOS / Linux
-```bash
-chmod +x start.sh
-./start.sh
-```
-
-### 訪問系統
-```
-網址：http://localhost:5000
-帳號：kuma
-密碼：kuma!2022
-```
-
----
+**後端**
+- Python 3.8+, Flask 3.0, SQLite, Flask-CORS, Werkzeug
 
 ## 📁 專案結構
 
 ```
 Dawan/
-├── admin/                        # 🎨 前端介面
-│   ├── index.html               # 儀表板頁面
-│   ├── login.html               # 登入頁面
-│   ├── css/                     # 樣式檔案（12個）
-│   ├── js/                      # JavaScript檔案（12個）
-│   ├── fonts/                   # 字體檔案（10個）
-│   └── images/                  # 圖片資源
-├── backend/                     # 🔧 後端程式
-│   ├── app.py                   # Flask主應用程式
-│   ├── seed_data.py             # 模擬數據生成腳本
-│   └── dawan.db                 # SQLite資料庫（首次啟動自動生成）
-├── database_schema.sql          # 📊 資料庫架構定義
-├── start.bat                    # 🪟 Windows啟動腳本
-├── start.sh                     # 🐧 Linux/Mac啟動腳本
-├── requirements.txt             # 📦 Python依賴清單
-├── 系統使用說明.md               # 📖 完整使用說明
-├── 開發進度報告.md               # 📝 開發進度與待辦事項
-└── README.md                    # 本檔案
+├── admin/                   # 前端管理介面
+│   ├── css/                # 樣式表
+│   ├── js/                 # JavaScript 檔案
+│   ├── fonts/              # 字體檔案
+│   ├── images/             # 圖片資源
+│   ├── index.html          # 主控台首頁
+│   └── login.html          # 登入頁面
+├── backend/                # Python Flask 後端
+│   ├── models/             # 資料模型（預留）
+│   ├── routes/             # API 路由（預留）
+│   ├── app.py              # Flask 應用主程式
+│   ├── seed_data.py        # 資料庫種子資料
+│   └── dawan.db            # SQLite 資料庫（執行後生成）
+├── docs/                   # 文檔
+├── database_schema.sql     # 資料庫架構
+├── requirements.txt        # Python 依賴套件
+├── start.bat              # Windows 啟動腳本
+├── run.bat                # 快速啟動腳本
+├── INSTALL.md             # 安裝指南
+└── README.md              # 本文件
 ```
 
+## 🚀 快速開始
+
+### 系統需求
+
+- Python 3.8+
+- pip (Python 套件管理工具)
+- 現代瀏覽器 (Chrome, Firefox, Edge)
+
+### 安裝步驟
+
+**Windows 用戶（推薦）**
+
+```bash
+# 1. 下載專案
+git clone https://github.com/bj7261716/Dawan.git
+cd Dawan
+
+# 2. 執行啟動腳本（會自動完成所有設定）
+start.bat
+
+# 3. 開啟瀏覽器訪問
+http://localhost:5000
+```
+
+**手動安裝**
+
+```bash
+# 1. 建立虛擬環境
+python -m venv venv
+
+# 2. 啟動虛擬環境
+venv\Scripts\activate          # Windows
+source venv/bin/activate       # Linux/Mac
+
+# 3. 安裝依賴套件
+pip install -r requirements.txt
+
+# 4. 初始化資料庫
+cd backend
+python -c "from app import init_db; init_db()"
+python seed_data.py
+
+# 5. 啟動系統
+python app.py
+```
+
+## 🔑 登入資訊
+
+- 帳號：`kuma`
+- 密碼：`kuma!2022`
+
+## 📊 資料庫架構
+
+系統使用 SQLite 資料庫，包含 23 個資料表：
+
+**核心功能表**
+- admins, products, product_categories, orders, order_items
+- users, companies, point_records
+
+**內容管理表**
+- promotions, coupons, health_articles, recipes, videos
+
+**系統設定表**
+- banners, brand_links, giveaways, contacts, settings, page_views
+
+完整架構請參考 [database_schema.sql](database_schema.sql)
+
+## 🛠️ API 端點
+
+**認證**
+- `POST /login` - 登入
+- `GET /logout` - 登出
+
+**儀表板**
+- `GET /admin/dashboard` - 儀表板頁面
+- `GET /api/dashboard/stats` - 統計數據
+- `GET /api/dashboard/order-chart` - 訂單圖表
+- `GET /api/dashboard/view-chart` - 瀏覽量圖表
+
+**資料管理**
+- `GET /api/products` - 商品列表
+- `GET /api/orders` - 訂單列表
+- `GET /api/users` - 會員列表
+
+## 📝 文檔
+
+- [安裝指南](INSTALL.md) - 詳細的安裝步驟
+- [系統使用說明](docs/系統使用說明.md) - 功能說明
+- [開發進度報告](docs/開發進度報告.md) - 開發紀錄
+
+## 🐛 常見問題
+
+**Q: 啟動時出現 "ModuleNotFoundError: No module named 'flask'"**
+
+A: 確認已啟動虛擬環境（看到 `(venv)`），然後執行 `pip install Flask Flask-CORS`
+
+**Q: 端口 5000 已被佔用**
+
+A: 修改 `backend/app.py` 最後一行改為其他端口（如 8080）
+
+更多問題請參考 [INSTALL.md](INSTALL.md)
+
+## 📄 授權
+
+© 2005 - 2026, 大灣藥局 版權所有 KUMA All Rights Reserved.
+
 ---
 
-## 📚 文檔說明
-
-### 1. [系統使用說明.md](./系統使用說明.md) ⭐
-**適合閱讀對象**：所有使用者
-
-包含內容：
-- 🚀 快速開始指南
-- 📖 完整功能說明
-- 📡 API文檔
-- 🗄️ 資料庫架構
-- ❓ 常見問題解答
-
-### 2. [開發進度報告.md](./開發進度報告.md)
-**適合閱讀對象**：開發者、專案管理者
-
-包含內容：
-- ✅ 已完成項目清單
-- ⏳ 待開發項目清單
-- 📊 完成度統計
-- 🎯 建議開發順序
-- ⚠️ 已知限制與問題
-
-### 3. [網站說明.md](./網站說明.md)
-**適合閱讀對象**：想了解網站功能的人
-
-包含內容：
-- 網站功能詳細介紹
-- 系統架構說明
-- 技術棧介紹
-
----
-
-## 🎯 目前狀態
-
-### ✅ 已完成功能
-- **登入系統**：完整的登入驗證（Session管理）
-- **儀表板**：即時統計數據、圖表展示
-  - 訂單數量統計
-  - 商品數量統計
-  - 未回覆信件統計
-  - 瀏覽次數統計
-  - 訂單趨勢圖表（按月）
-  - 瀏覽趨勢圖表（按月）
-  - 最新訂單列表
-  - 庫存警示
-- **後端API**：RESTful API架構
-  - 儀表板數據API
-  - 商品管理API（CRUD）
-  - 訂單管理API（查詢、更新）
-- **資料庫**：完整的SQLite資料庫（23個表格）
-- **模擬數據**：可立即測試的測試數據
-
-### ⏳ 待完成功能
-- 商品管理頁面（API已完成，需建立前端頁面）
-- 訂單管理頁面（API已完成，需建立前端頁面）
-- 會員管理頁面
-- 內容管理頁面（衛教、食譜、影音）
-- 首頁裝修管理
-- 圖片上傳功能
-
-**詳細進度請參考**：[開發進度報告.md](./開發進度報告.md)
-
----
-
-## 🎯 專案目標
-
-**已完成**：✅ 重建與原網站完全一致的視覺呈現
-
-**下一步**：
-1. 添加靜態模擬數據（讓圖表顯示）
-2. 實作基本的前端互動
-3. 整合後端系統（如需完整功能）
-
----
-
-## 📞 需要幫助？
-
-- 查看功能說明：閱讀 `網站說明.md`
-- 了解開發細節：閱讀 `開發記錄.md`
-- 查看原始畫面：參考 `參考圖片/1.png`
-
----
-
-## 📊 專案統計
-
-- **檔案數量**：26個檔案（HTML、CSS、JS、圖片）
-- **程式碼量**：約25,000行
-- **專案大小**：約2.4MB
-- **開發時間**：2026-04-13
-- **完成度**：第一階段 100% ✅
-
----
-
-**重建日期**：2026-04-13  
-**原始網址**：https://info.ouorange.com/kuma.com/admin  
-**重建者**：Claude Sonnet 4.5
+**Last Updated:** 2026-04-13  
+**Made with ❤️ by Dawan Pharmacy Team**
