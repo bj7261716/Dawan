@@ -1,0 +1,111 @@
+.card-box {
+    padding: .9rem;
+}
+
+.a-card {
+    display: block;
+    padding: .88rem;
+    color: #000
+}
+
+.a-card i {
+    opacity: 0.7;
+}
+
+.card-box {
+    background-color: #fff;
+    padding: 1.5rem;
+    -webkit-box-shadow: 0 0.75rem 6rem rgb(56 65 74 / 3%);
+    box-shadow: 0 0.75rem 6rem rgb(56 65 74 / 3%);
+    margin-bottom: 24px;
+    border-radius: .25rem;
+}
+
+.card-box-c {
+    background-color: #fff;
+    box-shadow: rgba(27, 84, 254, 0.1) 1.95px 1.95px 2.6px;
+    padding: 25px;
+    margin-bottom: 24px;
+    border-radius: 30px;
+    transition: all .3s ease-in-out
+}
+
+.card-box-c:hover {
+    box-shadow: rgba(27, 84, 254, 0.1) 0 8px 24px
+}
+
+.status-colum a:hover,
+a:focus {
+    transform: translateY(-3px)
+}
+
+a {
+    outline: none;
+}
+
+.header-title {
+    font-size: 1.05rem;
+    margin: 0 0 7px 0;
+}
+
+.header-title-c {
+    text-align: center;
+    font-size: 1.05rem;
+    margin: 0 0 7px 0;
+    color: #333;
+    font-weight: 600;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.widget-detail-1 h2 {
+    font-size: 2.25rem
+}
+
+.mt-0,
+.my-0 {
+    margin-top: 0 !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.a-card .link-i i {
+    font-size: 4.583rem;
+}
+
+.order-report-overlay,
+.view-report-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #fff;
+    z-index: 1000;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0.8) 75%, rgba(255, 255, 255, 0.6) 100%);
+}
+
+.order-report-overlay,
+.view-report-overlay {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.order-report-overlay .input-load.spinner-border,
+.view-report-overlay .input-load.spinner-border {
+    position: unset;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.input-load.spinner-border {
+    border-width: 2px;
+}

@@ -1,0 +1,24 @@
+.theme-color section.content:before {
+    background-color: #e5d9c2
+}
+
+.theme-color .navbar,
+.theme-color .page-loader-wrapper {
+    background: #3b2d21
+}
+
+.sidebar .user-info .detail h4 {
+    background-color: #ad977a
+}
+
+.theme-color .sidebar .menu .list li.active:not(.open)>:first-child span {
+    color: #ad977a
+}
+
+.theme-color .sidebar .menu .list a:hover {
+    color: #ad977a
+}
+
+.theme-color .sidebar .menu .list .ml-menu li.active a.toggled:not(.menu-toggle) {
+    color: #ad977a
+}

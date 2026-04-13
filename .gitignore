@@ -1,0 +1,26 @@
+# 臨時檔案
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# 編輯器設定
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules（如果未來使用）
+node_modules/
+package-lock.json
+
+# 系統檔案
+.claude/
+
+# 原始擷取的檔案（保留已整理到 admin 的版本）
+/css/
+/js/
+/image/
+/extracted_index.html
+/其他網站原始碼/

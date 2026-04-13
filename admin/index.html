@@ -1,0 +1,2618 @@
+<!doctype html>
+<html class="no-js" lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="csrf-token" content="WH5zj6C6HmiuaNdfbDCw55D2kZ8mMA8rHCwkqPPU">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>大灣藥局 - 後台管理系統</title>
+    <link rel="stylesheet"
+        href="./css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/select2.min.css">
+    <link rel="stylesheet" href="./css/notyf.min.css">
+    <link rel="stylesheet"
+        href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/toastr.min.css">
+    <link rel="stylesheet" href="./css/icons.css">
+    <link rel="stylesheet" href="./css/morris.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/hm-style.css">
+    <link rel="stylesheet" href="./css/color_skins.css">
+    <link rel="stylesheet" href="./css/admin_setting.css">
+    <link rel='stylesheet' type='text/css' property='stylesheet'
+        href='/kuma.com/_debugbar/assets/stylesheets?v=1763541085' data-turbolinks-eval='false' data-turbo-eval='false'>
+    <script src='/kuma.com/_debugbar/assets/javascript?v=1763541085' data-turbolinks-eval='false'
+        data-turbo-eval='false'></script>
+    <script data-turbo-eval='false'>
+        jQuery.noConflict(true);
+    </script>
+    <script>
+        Sfdump = window.Sfdump || (function (doc) {
+            doc.documentElement.classList.add('sf-js-enabled');
+            var rxEsc = /([.*+?^${}()|\[\]\/\\])/g
+                , idRx = /\bsf-dump-\d+-ref[012]\w+\b/
+                , keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl'
+                , addEventListener = function (e, n, cb) {
+                    e.addEventListener(n, cb, false);
+                };
+            if (!doc.addEventListener) {
+                addEventListener = function (element, eventName, callback) {
+                    element.attachEvent('on' + eventName, function (e) {
+                        e.preventDefault = function () {
+                            e.returnValue = false;
+                        }
+                            ;
+                        e.target = e.srcElement;
+                        callback(e);
+                    });
+                }
+                    ;
+            }
+            function toggle(a, recursive) {
+                var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass;
+                if (/\bsf-dump-compact\b/.test(oldClass)) {
+                    arrow = '▼';
+                    newClass = 'sf-dump-expanded';
+                } else if (/\bsf-dump-expanded\b/.test(oldClass)) {
+                    arrow = '▶';
+                    newClass = 'sf-dump-compact';
+                } else {
+                    return false;
+                }
+                if (doc.createEvent && s.dispatchEvent) {
+                    var event = doc.createEvent('Event');
+                    event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false);
+                    s.dispatchEvent(event);
+                }
+                a.lastChild.innerHTML = arrow;
+                s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass);
+                if (recursive) {
+                    try {
+                        a = s.querySelectorAll('.' + oldClass);
+                        for (s = 0; s < a.length; ++s) {
+                            if (-1 == a[s].className.indexOf(newClass)) {
+                                a[s].className = newClass;
+                                a[s].previousSibling.lastChild.innerHTML = arrow;
+                            }
+                        }
+                    } catch (e) { }
+                }
+                return true;
+            }
+            ; function collapse(a, recursive) {
+                var s = a.nextSibling || {}
+                    , oldClass = s.className;
+                if (/\bsf-dump-expanded\b/.test(oldClass)) {
+                    toggle(a, recursive);
+                    return true;
+                }
+                return false;
+            }
+            ; function expand(a, recursive) {
+                var s = a.nextSibling || {}
+                    , oldClass = s.className;
+                if (/\bsf-dump-compact\b/.test(oldClass)) {
+                    toggle(a, recursive);
+                    return true;
+                }
+                return false;
+            }
+            ; function collapseAll(root) {
+                var a = root.querySelector('a.sf-dump-toggle');
+                if (a) {
+                    collapse(a, true);
+                    expand(a);
+                    return true;
+                }
+                return false;
+            }
+            function reveal(node) {
+                var previous, parents = [];
+                while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) {
+                    parents.push(previous);
+                }
+                if (0 !== parents.length) {
+                    parents.forEach(function (parent) {
+                        expand(parent);
+                    });
+                    return true;
+                }
+                return false;
+            }
+            function highlight(root, activeNode, nodes) {
+                resetHighlightedNodes(root);
+                Array.from(nodes || []).forEach(function (node) {
+                    if (!/\bsf-dump-highlight\b/.test(node.className)) {
+                        node.className = node.className + ' sf-dump-highlight';
+                    }
+                });
+                if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) {
+                    activeNode.className = activeNode.className + ' sf-dump-highlight-active';
+                }
+            }
+            function resetHighlightedNodes(root) {
+                Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) {
+                    strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, '');
+                    strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, '');
+                });
+            }
+            return function (root, x) {
+                root = doc.getElementById(root);
+                var indentRx = new RegExp('^(' + (root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1') + ')+', 'm'), options = {
+                    "maxDepth": 1,
+                    "maxStringLength": 160,
+                    "fileLinkFormat": false
+                }, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = [];
+                while (i < len)
+                    t.push(elt[i++]);
+                for (i in x) {
+                    options[i] = x[i];
+                }
+                function a(e, f) {
+                    addEventListener(root, e, function (e, n) {
+                        if ('A' == e.target.tagName) {
+                            f(e.target, e);
+                        } else if ('A' == e.target.parentNode.tagName) {
+                            f(e.target.parentNode, e);
+                        } else {
+                            n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target;
+                            if ((n = n.nextElementSibling) && 'A' == n.tagName) {
+                                if (!/\bsf-dump-toggle\b/.test(n.className)) {
+                                    n = n.nextElementSibling || n;
+                                }
+                                f(n, e, true);
+                            }
+                        }
+                    });
+                }
+                ; function isCtrlKey(e) {
+                    return e.ctrlKey || e.metaKey;
+                }
+                function xpathString(str) {
+                    var parts = str.match(/[^'"]+|['"]/g).map(function (part) {
+                        if ("'" == part) {
+                            return '"\'"';
+                        }
+                        if ('"' == part) {
+                            return "'\"'";
+                        }
+                        return "'" + part + "'";
+                    });
+                    return "concat(" + parts.join(",") + ", '')";
+                }
+                function xpathHasClass(className) {
+                    return "contains(concat(' ', normalize-space(@class), ' '), ' " + className + " ')";
+                }
+                a('mouseover', function (a, e, c) {
+                    if (c) {
+                        e.target.style.cursor = "pointer";
+                    }
+                });
+                a('click', function (a, e, c) {
+                    if (/\bsf-dump-toggle\b/.test(a.className)) {
+                        e.preventDefault();
+                        if (!toggle(a, isCtrlKey(e))) {
+                            var r = doc.getElementById(a.getAttribute('href').slice(1))
+                                , s = r.previousSibling
+                                , f = r.parentNode
+                                , t = a.parentNode;
+                            t.replaceChild(r, a);
+                            f.replaceChild(a, s);
+                            t.insertBefore(s, r);
+                            f = f.firstChild.nodeValue.match(indentRx);
+                            t = t.firstChild.nodeValue.match(indentRx);
+                            if (f && t && f[0] !== t[0]) {
+                                r.innerHTML = r.innerHTML.replace(new RegExp('^' + f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]);
+                            }
+                            if (/\bsf-dump-compact\b/.test(r.className)) {
+                                toggle(s, isCtrlKey(e));
+                            }
+                        }
+                        if (c) { } else if (doc.getSelection) {
+                            try {
+                                doc.getSelection().removeAllRanges();
+                            } catch (e) {
+                                doc.getSelection().empty();
+                            }
+                        } else {
+                            doc.selection.empty();
+                        }
+                    } else if (/\bsf-dump-str-toggle\b/.test(a.className)) {
+                        e.preventDefault();
+                        e = a.parentNode.parentNode;
+                        e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className);
+                    }
+                });
+                elt = root.getElementsByTagName('SAMP');
+                len = elt.length;
+                i = 0;
+                while (i < len)
+                    t.push(elt[i++]);
+                len = t.length;
+                for (i = 0; i < len; ++i) {
+                    elt = t[i];
+                    if ('SAMP' == elt.tagName) {
+                        a = elt.previousSibling || {};
+                        if ('A' != a.tagName) {
+                            a = doc.createElement('A');
+                            a.className = 'sf-dump-ref';
+                            elt.parentNode.insertBefore(a, elt);
+                        } else {
+                            a.innerHTML += ' ';
+                        }
+                        a.title = (a.title ? a.title + '\n[' : '[') + keyHint + '+click] Expand all children';
+                        a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>';
+                        a.className += ' sf-dump-toggle';
+                        x = 1;
+                        if ('sf-dump' != elt.parentNode.className) {
+                            x += elt.parentNode.getAttribute('data-depth') / 1;
+                        }
+                    } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) {
+                        a = a.slice(1);
+                        elt.className += ' sf-dump-hover';
+                        elt.className += ' ' + a;
+                        if (/[\[{]$/.test(elt.previousSibling.nodeValue)) {
+                            a = a != elt.nextSibling.id && doc.getElementById(a);
+                            try {
+                                s = a.nextSibling;
+                                elt.appendChild(a);
+                                s.parentNode.insertBefore(a, s);
+                                if (/^[@#]/.test(elt.innerHTML)) {
+                                    elt.innerHTML += ' <span>▶</span>';
+                                } else {
+                                    elt.innerHTML = '<span>▶</span>';
+                                    elt.className = 'sf-dump-ref';
+                                }
+                                elt.className += ' sf-dump-toggle';
+                            } catch (e) {
+                                if ('&' == elt.innerHTML.charAt(0)) {
+                                    elt.innerHTML = '…';
+                                    elt.className = 'sf-dump-ref';
+                                }
+                            }
+                        }
+                    }
+                }
+                if (doc.evaluate && Array.from && root.children.length > 1) {
+                    root.setAttribute('tabindex', 0);
+                    SearchState = function () {
+                        this.nodes = [];
+                        this.idx = 0;
+                    }
+                        ;
+                    SearchState.prototype = {
+                        next: function () {
+                            if (this.isEmpty()) {
+                                return this.current();
+                            }
+                            this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0;
+                            return this.current();
+                        },
+                        previous: function () {
+                            if (this.isEmpty()) {
+                                return this.current();
+                            }
+                            this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1);
+                            return this.current();
+                        },
+                        isEmpty: function () {
+                            return 0 === this.count();
+                        },
+                        current: function () {
+                            if (this.isEmpty()) {
+                                return null;
+                            }
+                            return this.nodes[this.idx];
+                        },
+                        reset: function () {
+                            this.nodes = [];
+                            this.idx = 0;
+                        },
+                        count: function () {
+                            return this.nodes.length;
+                        },
+                    };
+                    function showCurrent(state) {
+                        var currentNode = state.current(), currentRect, searchRect;
+                        if (currentNode) {
+                            reveal(currentNode);
+                            highlight(root, currentNode, state.nodes);
+                            if ('scrollIntoView' in currentNode) {
+                                currentNode.scrollIntoView(true);
+                                currentRect = currentNode.getBoundingClientRect();
+                                searchRect = search.getBoundingClientRect();
+                                if (currentRect.top < (searchRect.top + searchRect.height)) {
+                                    window.scrollBy(0, -(searchRect.top + searchRect.height + 5));
+                                }
+                            }
+                        }
+                        counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count();
+                    }
+                    var search = doc.createElement('div');
+                    search.className = 'sf-dump-search-wrapper sf-dump-search-hidden';
+                    search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> ';
+                    root.insertBefore(search, root.firstChild);
+                    var state = new SearchState();
+                    var searchInput = search.querySelector('.sf-dump-search-input');
+                    var counter = search.querySelector('.sf-dump-search-count');
+                    var searchInputTimer = 0;
+                    var previousSearchQuery = '';
+                    addEventListener(searchInput, 'keyup', function (e) {
+                        var searchQuery = e.target.value;
+                        /* Don't perform anything if the pressed key didn't change the query */
+                        if (searchQuery === previousSearchQuery) {
+                            return;
+                        }
+                        previousSearchQuery = searchQuery;
+                        clearTimeout(searchInputTimer);
+                        searchInputTimer = setTimeout(function () {
+                            state.reset();
+                            collapseAll(root);
+                            resetHighlightedNodes(root);
+                            if ('' === searchQuery) {
+                                counter.textContent = '0 of 0';
+                                return;
+                            }
+                            var classMatches = ["sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private",].map(xpathHasClass).join(' or ');
+                            var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+                            while (node = xpathResult.iterateNext())
+                                state.nodes.push(node);
+                            showCurrent(state);
+                        }, 400);
+                    });
+                    Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) {
+                        addEventListener(btn, 'click', function (e) {
+                            e.preventDefault();
+                            -1 !== e.target.className.indexOf('next') ? state.next() : state.previous();
+                            searchInput.focus();
+                            collapseAll(root);
+                            showCurrent(state);
+                        })
+                    });
+                    addEventListener(root, 'keydown', function (e) {
+                        var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className);
+                        if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) {
+                            /* F3 or CMD/CTRL + F */
+                            if (70 === e.keyCode && document.activeElement === searchInput) {
+                                /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */
+                                return;
+                            }
+                            e.preventDefault();
+                            search.className = search.className.replace(/\bsf-dump-search-hidden\b/, '');
+                            searchInput.focus();
+                        } else if (isSearchActive) {
+                            if (27 === e.keyCode) {
+                                /* ESC key */
+                                search.className += ' sf-dump-search-hidden';
+                                e.preventDefault();
+                                resetHighlightedNodes(root);
+                                searchInput.value = '';
+                            } else if ((isCtrlKey(e) && 71 === e.keyCode)/* CMD/CTRL + G */
+                                || 13 === e.keyCode /* Enter */
+                                || 114 === e.keyCode /* F3 */
+                            ) {
+                                e.preventDefault();
+                                e.shiftKey ? state.previous() : state.next();
+                                collapseAll(root);
+                                showCurrent(state);
+                            }
+                        }
+                    });
+                }
+                if (0 >= options.maxStringLength) {
+                    return;
+                }
+                try {
+                    elt = root.querySelectorAll('.sf-dump-str');
+                    len = elt.length;
+                    i = 0;
+                    t = [];
+                    while (i < len)
+                        t.push(elt[i++]);
+                    len = t.length;
+                    for (i = 0; i < len; ++i) {
+                        elt = t[i];
+                        s = elt.innerText || elt.textContent;
+                        x = s.length - options.maxStringLength;
+                        if (0 < x) {
+                            h = elt.innerHTML;
+                            elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength);
+                            elt.className += ' sf-dump-str-collapse';
+                            elt.innerHTML = '<span class=sf-dump-str-collapse>' + h + '<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>' + '<span class=sf-dump-str-expand>' + elt.innerHTML + '<a class="sf-dump-ref sf-dump-str-toggle" title="' + x + ' remaining characters"> ▶</a></span>';
+                        }
+                    }
+                } catch (e) { }
+            }
+                ;
+        }
+        )(document);
+    </script>
+    <style>
+        .sf-js-enabled .phpdebugbar pre.sf-dump .sf-dump-compact,
+        .sf-js-enabled .sf-dump-str-collapse .sf-dump-str-collapse,
+        .sf-js-enabled .sf-dump-str-expand .sf-dump-str-expand {
+            display: none;
+        }
+
+        .sf-dump-hover:hover {
+            background-color: #B729D9;
+            color: #FFF !important;
+            border-radius: 2px;
+        }
+
+        .phpdebugbar pre.sf-dump {
+            display: block;
+            white-space: pre;
+            padding: 5px;
+            overflow: initial !important;
+        }
+
+        .phpdebugbar pre.sf-dump:after {
+            content: "";
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ellipsization {
+            display: inline-flex;
+        }
+
+        .phpdebugbar pre.sf-dump a {
+            text-decoration: none;
+            cursor: pointer;
+            border: 0;
+            outline: none;
+            color: inherit;
+        }
+
+        .phpdebugbar pre.sf-dump img {
+            max-width: 50em;
+            max-height: 50em;
+            margin: .5em 0 0 0;
+            padding: 0;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ellipsis {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ellipsis-tail {
+            flex-shrink: 0;
+        }
+
+        .phpdebugbar pre.sf-dump code {
+            display: inline;
+            padding: 0;
+            background: none;
+        }
+
+        .sf-dump-public.sf-dump-highlight,
+        .sf-dump-protected.sf-dump-highlight,
+        .sf-dump-private.sf-dump-highlight,
+        .sf-dump-str.sf-dump-highlight,
+        .sf-dump-key.sf-dump-highlight {
+            background: rgba(111, 172, 204, 0.3);
+            border: 1px solid #7DA0B1;
+            border-radius: 3px;
+        }
+
+        .sf-dump-public.sf-dump-highlight-active,
+        .sf-dump-protected.sf-dump-highlight-active,
+        .sf-dump-private.sf-dump-highlight-active,
+        .sf-dump-str.sf-dump-highlight-active,
+        .sf-dump-key.sf-dump-highlight-active {
+            background: rgba(253, 175, 0, 0.4);
+            border: 1px solid #ffa500;
+            border-radius: 3px;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-hidden {
+            display: none !important;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper {
+            font-size: 0;
+            white-space: nowrap;
+            margin-bottom: 5px;
+            display: flex;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 5px;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>* {
+            vertical-align: top;
+            box-sizing: border-box;
+            height: 21px;
+            font-weight: normal;
+            border-radius: 0;
+            background: #FFF;
+            color: #757575;
+            border: 1px solid #BBB;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>input.sf-dump-search-input {
+            padding: 3px;
+            height: 21px;
+            font-size: 12px;
+            border-right: none;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            color: #000;
+            min-width: 15px;
+            width: 100%;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-next,
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-previous {
+            background: #F2F2F2;
+            outline: none;
+            border-left: none;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-next {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-next>svg,
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-previous>svg {
+            pointer-events: none;
+            width: 12px;
+            height: 12px;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-count {
+            display: inline-block;
+            padding: 0 5px;
+            margin: 0;
+            border-left: none;
+            line-height: 21px;
+            font-size: 12px;
+        }
+
+        .phpdebugbar pre.sf-dump,
+        .phpdebugbar pre.sf-dump .sf-dump-default {
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            word-break: normal
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-num {
+            font-weight: bold;
+            color: #1299DA
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-const {
+            font-weight: bold
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-str {
+            font-weight: bold;
+            color: #3A9B26
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-note {
+            color: #1299DA
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ref {
+            color: #7B7B7B
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-public {
+            color: #000000
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-protected {
+            color: #000000
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-private {
+            color: #000000
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-meta {
+            color: #B729D9
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-key {
+            color: #3A9B26
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-index {
+            color: #1299DA
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ellipsis {
+            color: #A0A000
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ns {
+            user-select: none;
+        }
+
+        .phpdebugbar pre.sf-dump .sf-dump-ellipsis-note {
+            color: #1299DA
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump,
+        pre.sf-dump .sf-dump-default {
+            background-color: #18171B;
+            color: #FF8400;
+            line-height: 1.2em;
+            font: 12px Menlo, Monaco, Consolas, monospace;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            position: relative;
+            z-index: 99999;
+            word-break: break-all
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-num {
+            font-weight: bold;
+            color: #1299DA
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-const {
+            font-weight: bold
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-str {
+            font-weight: bold;
+            color: #56DB3A
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-note {
+            color: #1299DA
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ref {
+            color: #A0A0A0
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-public {
+            color: #FFFFFF
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-protected {
+            color: #FFFFFF
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-private {
+            color: #FFFFFF
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-meta {
+            color: #B729D9
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-key {
+            color: #56DB3A
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-index {
+            color: #1299DA
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis {
+            color: #FF8400
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ns {
+            user-select: none;
+        }
+
+        .phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis-note {
+            color: #1299DA
+        }
+    </style>
+</head>
+
+<body class="theme-color index index">
+    <nav class="navbar p-l-5 p-r-5">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <div class="navbar-header">
+                    <a href="javascript:;" class="bars"></a>
+                    <a class="navbar-brand" href="https://info.ouorange.com/kuma.com/admin/index" title="大灣藥局 - 後台管理系統">
+                        <span class="m-l-10">大灣藥局 - 後台管理系統</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" class="ls-toggle-btn waves-effect waves-light" data-close="true">
+                    <i class="zmdi zmdi-swap"></i>
+                </a>
+            </li>
+            <li class="float-right">
+                <div class="toggleWrapper">
+                    <input type="checkbox" id="dn" class="dn" name="fix-switch">
+                    <label for="dn" class="toggle">
+                        <span class="toggle__handler">
+                            <span class="crater crater--1"></span>
+                            <span class="crater crater--2"></span>
+                            <span class="crater crater--3"></span>
+                        </span>
+                    </label>
+                </div>
+                <a href="https://info.ouorange.com/kuma.com/admin/intro" class="mega-menu waves-effect waves-light">
+                    <i class="mdi"></i>
+                    後台導覽
+                </a>
+                <a href="https://info.ouorange.com/kuma.com/admin/admin-information"
+                    class="mega-menu waves-effect waves-light">
+                    <i class="mdi"></i>
+                    主機資訊
+                </a>
+                <a href="https://info.ouorange.com/kuma.com" class="mega-menu waves-effect waves-light" target="_blank">
+                    <i class="mdi"></i>
+                    前台
+                </a>
+                <a href="https://info.ouorange.com/kuma.com/admin/logout" class="mega-menu waves-effect waves-light"
+                    data-close="true">
+                    <i class="mdi mdi-logout"></i>
+                    登出
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <aside id="leftsidebar" class="sidebar">
+        <div class="tab-content">
+            <div id="dashboard" class="tab-pane stretchRight active">
+                <div class="menu">
+                    <ul class="list" data-intro="此處選擇欲編輯資料頁面">
+                        <li>
+                            <div class="user-info">
+                                <div class="image">
+                                    <img src="./images/logo.png" class="logo">
+                                </div>
+                                <div class="detail">
+                                    <h4>Hi, 庫瑪 後台管理員</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <select class="form-control select2"
+                            onChange="location = this.options[this.selectedIndex].value;">
+                            <option value="https://info.ouorange.com.tw/kuma.comadmin?name=kuma&amp;password=kuma!2022"
+                                selected>主網站
+                            </option>
+                            <option value="http://cancer-care.com.tw/admin?name=kuma&amp;password=kuma!2022">癌症營養照護
+                            </option>
+                            <option value="https://info.ouorange.com/kuma.comadmin?name=kuma&amp;password=kuma!2022">
+                                景岳生技
+                            </option>
+                            <option value="https://info.ouorange.com/kuma.comadmin?name=kuma&amp;password=kuma!2022">力增飲
+                            </option>
+                        </select>
+                        <li class="header">首頁裝修管理</li>
+                        <li class="active">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class=""></i>
+                                <span>店面裝修管理</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="active">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/index">數據統計</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/index-setting">首頁設定</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/banner">首頁輪播圖</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/brand">首頁分類廣告</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/pbanner">全館商品廣告圖</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/web-setting">特惠活動BN</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/sale">快閃下殺區</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/logo" class="">
+                                <i class=""></i>
+                                <span>品牌網連結</span>
+                            </a>
+                        <li class="header">頁面管理</li>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/promotion-category" class="">
+                                <i class=""></i>
+                                <span>特惠活動</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/coupon-category" class="">
+                                <i class=""></i>
+                                <span>優惠券/BN設定</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/healthy-category" class="">
+                                <i class=""></i>
+                                <span>衛教資訊</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/recipe-category" class="">
+                                <i class=""></i>
+                                <span>食譜資訊</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/video-category" class="">
+                                <i class=""></i>
+                                <span>影音資訊</span>
+                            </a>
+                        <li class="">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class=""></i>
+                                <span>政策管理</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/notice">購物須知</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/privacy">隱私權政策聲明</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/policy">網站安全政策聲明</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header">店家經營</li>
+                        <li class="">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class=""></i>
+                                <span>商品管理</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/product-category">商品分類</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/product">商品資料</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/order" class="">
+                                <i class=""></i>
+                                <span>訂單管理</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/report" class="">
+                                <i class=""></i>
+                                <span>訂單匯出</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/giveaway" class="">
+                                <i class=""></i>
+                                <span>贈品管理</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/letter" class="">
+                                <i class=""></i>
+                                <span>聯絡紀錄　0</span>
+                            </a>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/price-inquiry-record" class="">
+                                <i class=""></i>
+                                <span>詢價紀錄　0</span>
+                            </a>
+                        <li class="">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class=""></i>
+                                <span>購物金管理</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/coin">購物金發放</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/coin-report">購物金流向</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/number-report">序號管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/shipping" class="">
+                                <i class=""></i>
+                                <span>運送管理</span>
+                            </a>
+                        <li class="">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class=""></i>
+                                <span>會員管理</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/user">一般會員管理</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/company">廠商帳號管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header">系統設置</li>
+                        <li class="">
+                            <a href="https://info.ouorange.com/kuma.com/admin/sub" class="">
+                                <i class="mdi mdi-tag"></i>
+                                <span>子品牌建立</span>
+                            </a>
+                        <li class="">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class="mdi mdi-wrench"></i>
+                                <span>其他設定</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/contact">聯絡資訊</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/keyword">關鍵字</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/analytics">流量分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" class="menu-toggle">
+                                <i class="mdi mdi-account-key"></i>
+                                <span>帳戶管理</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/admin-group">帳戶群組</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://info.ouorange.com/kuma.com/admin/admin">帳戶列表</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="content home">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>數據統計</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:;">
+                                <i class="zmdi zmdi-home"></i>
+                                首頁
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">數據統計</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="alert alert-warning fade show">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <ol>
+                                    <li>通過左側選單進行管理。</li>
+                                    <li>
+                                        如果要離開一段時間，請
+                                        <b>
+                                            <u>登出</u>
+                                        </b>
+                                        帳戶。
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding:15px 15px 0 15px;">
+            <div class="col-xl-3 col-md-6 status-colum">
+                <a href="https://info.ouorange.com/kuma.com/admin/order" class="card-box-c a-card" title="顯示詳細...">
+                    <h4 class="header-title-c mt-0 mb-0" style="text-align: center;">訂單資訊總數</h4>
+                    <div class="widget-chart-1">
+                        <div class="widget-detail-1 text-center">
+                            <h2 class="font-weight-normal pt-0 mb-1">1</h2>
+                            <p class="text-muted mb-1">筆</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 status-colum">
+                <a href="https://info.ouorange.com/kuma.com/admin/product" class="card-box-c a-card" title="顯示詳細...">
+                    <h4 class="header-title-c mt-0 mb-0">商品總數</h4>
+                    <div class="widget-chart-1">
+                        <div class="widget-detail-1 text-center">
+                            <h2 class="font-weight-normal pt-0 mb-1">0</h2>
+                            <p class="text-muted mb-1">筆</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 status-colum">
+                <a href="https://info.ouorange.com/kuma.com/admin/letter" class="card-box-c a-card" title="顯示詳細...">
+                    <h4 class="header-title-c mt-0 mb-0">未回覆信件</h4>
+                    <div class="widget-chart-1">
+                        <div class="widget-detail-1 text-center">
+                            <h2 class="font-weight-normal pt-0 mb-1">0</h2>
+                            <p class="text-muted mb-1">件</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 status-colum">
+                <a href="javascript:;" class="card-box-c a-card" title="顯示詳細...">
+                    <h4 class="header-title-c mt-0 mb-0">瀏覽次數</h4>
+                    <div class="widget-chart-1">
+                        <div class="widget-detail-1 text-center">
+                            <h2 class="font-weight-normal pt-0 mb-1">581</h2>
+                            <p class="text-muted mb-1">次</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="padding:15px 15px 0 15px;">
+            <div class="col-xl-8 col-md-12">
+                <div class="row">
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card-box relative">
+                            <div class="order-report-overlay" style="display: none;">
+                                <div class="input-load spinner-border text-custom m-2" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                                資料讀取中...
+
+                            </div>
+                            <h4 class="header-title mt-0">今年訂單筆數筆數統計</h4>
+                            <div id="morris-bar" dir="ltr" style="height: 18.65rem;" class="morris-chart"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card-box relative">
+                            <div class="view-report-overlay" style="display: none;">
+                                <div class="input-load spinner-border text-custom m-2" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                                資料讀取中...
+
+                            </div>
+                            <h4 class="header-title mt-0">今年瀏覽次數統計</h4>
+                            <div id="morris-line" dir="ltr" style="height: 18.65rem;" class="morris-chart"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card-box">
+                            <h4 class="header-title mt-0 card-box-title">庫存近況</h4>
+                            <div class="table-scrollable">
+                                <table class="table table-bordered table-vertical-middle font-1 mb-0"
+                                    style="min-width: 45rem;">
+                                    <thead>
+                                        <tr>
+                                            <th width="80%"># 品名</th>
+                                            <th width="10%">庫存</th>
+                                            <th width="10%">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card-box">
+                            <h4 class="header-title mt-0 card-box-title">最新訂單</h4>
+                            <div class="table-scrollable">
+                                <table class="table table-bordered table-vertical-middle font-1 mb-0"
+                                    style="min-width: 45rem;">
+                                    <thead>
+                                        <tr>
+                                            <th width="5%"># 訂單編號</th>
+                                            <th width="5%">建立日期</th>
+                                            <th width="2%">訂單狀態</th>
+                                            <th width="5%">訂單總金額</th>
+                                            <th width="5%">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2026010212345</td>
+                                            <td>2026-01-02</td>
+                                            <td>
+                                                <span class="badge black">處理中</span>
+                                            </td>
+                                            <td>$170</td>
+                                            <td>
+                                                <a href="https://info.ouorange.com/kuma.com/admin/order/1/edit"
+                                                    class="btn-edit icons btn btn-primary btn-simple btn-xs">編輯</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/order" class="card-box a-card">
+                            <h4 class="header-title mt-0">訂單管理</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-square-edit-outline"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/product" class="card-box a-card">
+                            <h4 class="header-title mt-0">商品管理</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-cart-outline"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/healthy-category" class="card-box a-card">
+                            <h4 class="header-title mt-0">衛教資訊</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-heart-outline"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/contact" class="card-box a-card">
+                            <h4 class="header-title mt-0">聯絡資訊</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-email-outline"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/coupon-category" class="card-box a-card">
+                            <h4 class="header-title mt-0">優惠券管理</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-currency-usd"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/giveaway" class="card-box a-card">
+                            <h4 class="header-title mt-0">贈品管理</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-wallet-giftcard"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/recipe-category" class="card-box a-card">
+                            <h4 class="header-title mt-0">食譜資訊</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-fish"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://info.ouorange.com/kuma.com/admin/video-category" class="card-box a-card">
+                            <h4 class="header-title mt-0">影音資訊</h4>
+                            <div class="text-center link-i">
+                                <i class="mdi mdi-video"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/libscripts.bundle.js"></script>
+    <script src="./js/vendorscripts.bundle.js"></script>
+    <script src="./js/notyf.min.js"></script>
+    <script src="./js/toastr.min.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+    <script src="./js/select2.min.js"></script>
+    <script src="./js/zh-TW.js"></script>
+    <script src="./js/mainscripts.bundle.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/raphael.min.js"></script>
+    <script src="./js/morris.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="text/javascript">
+        var phpdebugbar = new PhpDebugBar.DebugBar({
+            "theme": "auto",
+            "hideEmptyTabs": true
+        });
+        phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({
+            "icon": "tags",
+            "order": -100,
+            "title": "Request",
+            "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()
+        }));
+        phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({
+            "icon": "list-alt",
+            "title": "Messages",
+            "widget": new PhpDebugBar.Widgets.MessagesWidget()
+        }));
+        phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({
+            "icon": "clock-o",
+            "tooltip": "Request Duration",
+            "link": "timeline"
+        }), "right");
+        phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({
+            "icon": "tasks",
+            "title": "Timeline",
+            "widget": new PhpDebugBar.Widgets.TimelineWidget()
+        }));
+        phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({
+            "icon": "cogs",
+            "tooltip": "Memory Usage"
+        }), "right");
+        phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({
+            "icon": "bug",
+            "title": "Exceptions",
+            "widget": new PhpDebugBar.Widgets.ExceptionsWidget()
+        }));
+        phpdebugbar.addIndicator("version", new PhpDebugBar.DebugBar.Indicator({
+            "icon": "laravel phpdebugbar-fab"
+        }), "right");
+        phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({
+            "icon": "leaf",
+            "title": "Views",
+            "widget": new PhpDebugBar.Widgets.TemplatesWidget()
+        }));
+        phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({
+            "icon": "database",
+            "title": "Queries",
+            "widget": new PhpDebugBar.Widgets.LaravelQueriesWidget()
+        }));
+        phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({
+            "icon": "cubes",
+            "title": "Models",
+            "widget": new PhpDebugBar.Widgets.TableVariableListWidget()
+        }));
+        phpdebugbar.addTab("emails", new PhpDebugBar.DebugBar.Tab({
+            "icon": "inbox",
+            "title": "Mails",
+            "widget": new PhpDebugBar.Widgets.MailsWidget()
+        }));
+        phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({
+            "icon": "list-alt",
+            "title": "Gate",
+            "widget": new PhpDebugBar.Widgets.MessagesWidget()
+        }));
+        phpdebugbar.addIndicator("currentrequest", new PhpDebugBar.DebugBar.Indicator({
+            "icon": "share",
+            "link": "request"
+        }), "right");
+        phpdebugbar.setDataMap({
+            "request": ["request.data", {}],
+            "messages": ["messages.messages", []],
+            "messages:badge": ["messages.count", null],
+            "time": ["time.duration_str", '0ms'],
+            "timeline": ["time", {}],
+            "memory": ["memory.peak_usage_str", '0B'],
+            "exceptions": ["exceptions.exceptions", []],
+            "exceptions:badge": ["exceptions.count", null],
+            "version": ["laravel.version",],
+            "version:tooltip": ["laravel.tooltip", {}],
+            "views": ["views", []],
+            "views:badge": ["views.nb_templates", 0],
+            "queries": ["queries", []],
+            "queries:badge": ["queries.nb_statements", 0],
+            "models": ["models", {}],
+            "models:badge": ["models.count", 0],
+            "emails": ["symfonymailer_mails.mails", []],
+            "emails:badge": ["symfonymailer_mails.count", null],
+            "gate": ["gate.messages", []],
+            "gate:badge": ["gate.count", null],
+            "request:badge": ["request.badge", null],
+            "currentrequest": ["request.data.uri",],
+            "currentrequest:tooltip": ["request.tooltip", {}]
+        });
+        phpdebugbar.restoreState();
+        phpdebugbar.enableAjaxHandlerTab();
+        phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+        phpdebugbar.ajaxHandler.bindToFetch();
+        phpdebugbar.ajaxHandler.bindToXHR();
+        phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({
+            "url": "https:\/\/info.ouorange.com\/kuma.com\/_debugbar\/open"
+        }));
+        phpdebugbar.addDataSet({
+            "__meta": {
+                "id": "01KP2PT9X3W5J178DGF9WXDY23",
+                "datetime": "2026-04-13 14:00:16",
+                "utime": 1776060016.547802,
+                "method": "GET",
+                "uri": "\/kuma.com\/admin\/index",
+                "ip": "27.52.3.120"
+            },
+            "messages": {
+                "count": 0,
+                "messages": []
+            },
+            "time": {
+                "count": 11,
+                "start": 1776060016.440402,
+                "end": 1776060016.547818,
+                "duration": 0.10741591453552246,
+                "duration_str": "107ms",
+                "measures": [{
+                    "label": "Booting",
+                    "start": 1776060016.440402,
+                    "relative_start": 0,
+                    "end": 1776060016.506701,
+                    "relative_end": 1776060016.506701,
+                    "duration": 0.0662989616394043,
+                    "duration_str": "66.3ms",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "time",
+                    "group": null
+                }, {
+                    "label": "Application",
+                    "start": 1776060016.506717,
+                    "relative_start": 0.0663149356842041,
+                    "end": 1776060016.547821,
+                    "relative_end": 3.0994415283203125e-6,
+                    "duration": 0.04110407829284668,
+                    "duration_str": "41.1ms",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "time",
+                    "group": null
+                }, {
+                    "label": "Routing",
+                    "start": 1776060016.511737,
+                    "relative_start": 0.0713350772857666,
+                    "end": 1776060016.514115,
+                    "relative_end": 1776060016.514115,
+                    "duration": 0.0023779869079589844,
+                    "duration_str": "2.38ms",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": null,
+                    "group": null
+                }, {
+                    "label": "Preparing Response",
+                    "start": 1776060016.541588,
+                    "relative_start": 0.10118603706359863,
+                    "end": 1776060016.547234,
+                    "relative_end": 1776060016.547234,
+                    "duration": 0.0056459903717041016,
+                    "duration_str": "5.65ms",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": null,
+                    "group": null
+                }, {
+                    "label": "View: admin.index.index",
+                    "start": 1776060016.542056,
+                    "relative_start": 0.101654052734375,
+                    "end": 1776060016.542056,
+                    "relative_end": 1776060016.542056,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }, {
+                    "label": "View: admin.include.master",
+                    "start": 1776060016.543898,
+                    "relative_start": 0.10349607467651367,
+                    "end": 1776060016.543898,
+                    "relative_end": 1776060016.543898,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }, {
+                    "label": "View: admin.include.charset",
+                    "start": 1776060016.544195,
+                    "relative_start": 0.10379290580749512,
+                    "end": 1776060016.544195,
+                    "relative_end": 1776060016.544195,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }, {
+                    "label": "View: admin.include.header-css",
+                    "start": 1776060016.544592,
+                    "relative_start": 0.10418987274169922,
+                    "end": 1776060016.544592,
+                    "relative_end": 1776060016.544592,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }, {
+                    "label": "View: admin.include.header-top",
+                    "start": 1776060016.544992,
+                    "relative_start": 0.10458993911743164,
+                    "end": 1776060016.544992,
+                    "relative_end": 1776060016.544992,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }, {
+                    "label": "View: admin.include.footer-js",
+                    "start": 1776060016.546372,
+                    "relative_start": 0.10596990585327148,
+                    "end": 1776060016.546372,
+                    "relative_end": 1776060016.546372,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }, {
+                    "label": "View: web.layouts.message",
+                    "start": 1776060016.546855,
+                    "relative_start": 0.10645294189453125,
+                    "end": 1776060016.546855,
+                    "relative_end": 1776060016.546855,
+                    "duration": 0,
+                    "duration_str": "0\u03bcs",
+                    "memory": 0,
+                    "memory_str": "0B",
+                    "params": [],
+                    "collector": "views",
+                    "group": "View"
+                }]
+            },
+            "memory": {
+                "peak_usage": 3979672,
+                "peak_usage_str": "4MB"
+            },
+            "exceptions": {
+                "count": 0,
+                "exceptions": []
+            },
+            "laravel": {
+                "version": "10.x",
+                "tooltip": {
+                    "Laravel Version": "10.50.0",
+                    "PHP Version": "8.2.12",
+                    "Environment": "local",
+                    "Debug Mode": "Enabled",
+                    "URL": "info.ouorange.com\/kuma.com",
+                    "Timezone": "Asia\/Taipei",
+                    "Locale": "zh-TW"
+                }
+            },
+            "views": {
+                "count": 7,
+                "nb_templates": 7,
+                "templates": [{
+                    "name": "admin.index.index",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.54203,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/admin\/index\/index.blade.phpadmin.index.index",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fadmin%2Findex%2Findex.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "index.blade.php",
+                        "line": "?"
+                    }
+                }, {
+                    "name": "admin.include.master",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.543875,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/admin\/include\/master.blade.phpadmin.include.master",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fadmin%2Finclude%2Fmaster.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "master.blade.php",
+                        "line": "?"
+                    }
+                }, {
+                    "name": "admin.include.charset",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.544176,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/admin\/include\/charset.blade.phpadmin.include.charset",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fadmin%2Finclude%2Fcharset.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "charset.blade.php",
+                        "line": "?"
+                    }
+                }, {
+                    "name": "admin.include.header-css",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.544568,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/admin\/include\/header-css.blade.phpadmin.include.header-css",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fadmin%2Finclude%2Fheader-css.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "header-css.blade.php",
+                        "line": "?"
+                    }
+                }, {
+                    "name": "admin.include.header-top",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.544973,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/admin\/include\/header-top.blade.phpadmin.include.header-top",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fadmin%2Finclude%2Fheader-top.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "header-top.blade.php",
+                        "line": "?"
+                    }
+                }, {
+                    "name": "admin.include.footer-js",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.546342,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/admin\/include\/footer-js.blade.phpadmin.include.footer-js",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fadmin%2Finclude%2Ffooter-js.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "footer-js.blade.php",
+                        "line": "?"
+                    }
+                }, {
+                    "name": "web.layouts.message",
+                    "param_count": null,
+                    "params": [],
+                    "start": 1776060016.546836,
+                    "type": "blade",
+                    "hash": "bladeD:\\xampp\\htdocs\\kuma.com\\resources\\views\/web\/layouts\/message.blade.phpweb.layouts.message",
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fresources%2Fviews%2Fweb%2Flayouts%2Fmessage.blade.php\u0026line=1",
+                        "ajax": false,
+                        "filename": "message.blade.php",
+                        "line": "?"
+                    }
+                }]
+            },
+            "queries": {
+                "count": 14,
+                "nb_statements": 14,
+                "nb_visible_statements": 14,
+                "nb_excluded_statements": 0,
+                "nb_failed_statements": 0,
+                "accumulated_duration": 0.0037300000000000002,
+                "accumulated_duration_str": "3.73ms",
+                "memory_usage": 0,
+                "memory_usage_str": null,
+                "statements": [{
+                    "sql": "select * from `admins` where `id` = 14 and `admins`.`deleted_at` is null limit 1",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [14],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Auth\/EloquentUserProvider.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\EloquentUserProvider.php",
+                        "line": 59
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Auth\/SessionGuard.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\SessionGuard.php",
+                        "line": 159
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Auth\/GuardHelpers.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\GuardHelpers.php",
+                        "line": 56
+                    }, {
+                        "index": 19,
+                        "namespace": "middleware",
+                        "name": "auth",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php",
+                        "line": 76
+                    }, {
+                        "index": 20,
+                        "namespace": "middleware",
+                        "name": "auth",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php",
+                        "line": 55
+                    }],
+                    "start": 1776060016.519725,
+                    "duration": 0.00035999999999999997,
+                    "duration_str": "360\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "EloquentUserProvider.php:59",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Auth\/EloquentUserProvider.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\EloquentUserProvider.php",
+                        "line": 59
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FAuth%2FEloquentUserProvider.php\u0026line=59",
+                        "ajax": false,
+                        "filename": "EloquentUserProvider.php",
+                        "line": "59"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 0,
+                    "width_percent": 9.651
+                }, {
+                    "sql": "select * from `admin_groups` where `admin_groups`.`group` = \u0027ADMIN\u0027 limit 1",
+                    "type": "query",
+                    "params": [],
+                    "bindings": ["ADMIN"],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 21,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 22
+                    }, {
+                        "index": 22,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }, {
+                        "index": 24,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }, {
+                        "index": 25,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+                        "line": 50
+                    }, {
+                        "index": 26,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }],
+                    "start": 1776060016.523058,
+                    "duration": 0.00031,
+                    "duration_str": "310\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "permission:22",
+                    "source": {
+                        "index": 21,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 22
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FMiddleware%2FPermission.php\u0026line=22",
+                        "ajax": false,
+                        "filename": "Permission.php",
+                        "line": "22"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 9.651,
+                    "width_percent": 8.311
+                }, {
+                    "sql": "select `menu_category` from `admin_group_permissions` where `admin_group_permissions`.`group` = \u0027ADMIN\u0027 and `admin_group_permissions`.`group` is not null",
+                    "type": "query",
+                    "params": [],
+                    "bindings": ["ADMIN"],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 17,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 26
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }, {
+                        "index": 21,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+                        "line": 50
+                    }, {
+                        "index": 22,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }],
+                    "start": 1776060016.524626,
+                    "duration": 0.00031,
+                    "duration_str": "310\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "permission:26",
+                    "source": {
+                        "index": 17,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 26
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FMiddleware%2FPermission.php\u0026line=26",
+                        "ajax": false,
+                        "filename": "Permission.php",
+                        "line": "26"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 17.962,
+                    "width_percent": 8.311
+                }, {
+                    "sql": "select count(*) as aggregate from `letters` where `reply_time` is null",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 40
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 21
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 165
+                    }, {
+                        "index": 19,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 34
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }],
+                    "start": 1776060016.5259,
+                    "duration": 0.00017999999999999998,
+                    "duration_str": "180\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "AdminController.php:40",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 40
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FAdminController.php\u0026line=40",
+                        "ajax": false,
+                        "filename": "AdminController.php",
+                        "line": "40"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 26.273,
+                    "width_percent": 4.826
+                }, {
+                    "sql": "select count(*) as aggregate from `price_inquiry_records` where `reply_time` is null",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 41
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 21
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 165
+                    }, {
+                        "index": 19,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 34
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }],
+                    "start": 1776060016.527193,
+                    "duration": 0.00032,
+                    "duration_str": "320\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "AdminController.php:41",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 41
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FAdminController.php\u0026line=41",
+                        "ajax": false,
+                        "filename": "AdminController.php",
+                        "line": "41"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 31.099,
+                    "width_percent": 8.579
+                }, {
+                    "sql": "select * from `admin_settings` where `sub_list_id` = 1 limit 1",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [1],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 23
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 165
+                    }, {
+                        "index": 18,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 34
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }, {
+                        "index": 21,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }],
+                    "start": 1776060016.5284488,
+                    "duration": 0.00023,
+                    "duration_str": "230\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "AdminController.php:23",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 23
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FAdminController.php\u0026line=23",
+                        "ajax": false,
+                        "filename": "AdminController.php",
+                        "line": "23"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 39.678,
+                    "width_percent": 6.166
+                }, {
+                    "sql": "select `id`, `url`, `name` from `sub_lists` where `sub_lists`.`deleted_at` is null order by `sort` asc, `id` asc",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 15,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 25
+                    }, {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 165
+                    }, {
+                        "index": 17,
+                        "namespace": "middleware",
+                        "name": "permission",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Middleware\\Permission.php",
+                        "line": 34
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                        "line": 183
+                    }],
+                    "start": 1776060016.529691,
+                    "duration": 0.00032,
+                    "duration_str": "320\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "AdminController.php:25",
+                    "source": {
+                        "index": 15,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/AdminController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\AdminController.php",
+                        "line": 25
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FAdminController.php\u0026line=25",
+                        "ajax": false,
+                        "filename": "AdminController.php",
+                        "line": "25"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 45.845,
+                    "width_percent": 8.579
+                }, {
+                    "sql": "select count(*) as aggregate from `orders` where `orders`.`deleted_at` is null",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 28
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.53114,
+                    "duration": 0.00032,
+                    "duration_str": "320\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:28",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 28
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=28",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "28"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 54.424,
+                    "width_percent": 8.579
+                }, {
+                    "sql": "select count(*) as aggregate from `products` where `sub_list_id` = 1 and `products`.`deleted_at` is null",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [1],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 29
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.5326731,
+                    "duration": 0.00028000000000000003,
+                    "duration_str": "280\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:29",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 29
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=29",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "29"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 63.003,
+                    "width_percent": 7.507
+                }, {
+                    "sql": "select count(*) as aggregate from `letters` where `reply_time` is null",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 30
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.533769,
+                    "duration": 0.00017,
+                    "duration_str": "170\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:30",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 30
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=30",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "30"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 70.509,
+                    "width_percent": 4.558
+                }, {
+                    "sql": "select `views` from `sub_lists` where `id` = 1 and `sub_lists`.`deleted_at` is null limit 1",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [1],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 31
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.534881,
+                    "duration": 0.00031,
+                    "duration_str": "310\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:31",
+                    "source": {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 31
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=31",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "31"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 75.067,
+                    "width_percent": 8.311
+                }, {
+                    "sql": "select `id`, `stock`, `name` from `products` where `sub_list_id` = 1 and `stock_enabled` = \u0027N\u0027 and `products`.`deleted_at` is null order by `stock` asc limit 5",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [1, "N"],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 15,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 34
+                    }, {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.536215,
+                    "duration": 0.00020999999999999998,
+                    "duration_str": "210\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:34",
+                    "source": {
+                        "index": 15,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 34
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=34",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "34"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 83.378,
+                    "width_percent": 5.63
+                }, {
+                    "sql": "select `id`, `order_number`, `order_status_identify`, `created_at`, `total` from `orders` where `orders`.`deleted_at` is null order by `id` desc limit 5",
+                    "type": "query",
+                    "params": [],
+                    "bindings": [],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 15,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 37
+                    }, {
+                        "index": 16,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 17,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 18,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 19,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.537399,
+                    "duration": 0.0002,
+                    "duration_str": "200\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:37",
+                    "source": {
+                        "index": 15,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 37
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=37",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "37"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 89.008,
+                    "width_percent": 5.362
+                }, {
+                    "sql": "select * from `order_statuses` where `order_statuses`.`key` in (\u0027ORDER_PROCESSING\u0027)",
+                    "type": "query",
+                    "params": [],
+                    "bindings": ["ORDER_PROCESSING"],
+                    "hints": null,
+                    "show_copy": true,
+                    "backtrace": [{
+                        "index": 20,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 37
+                    }, {
+                        "index": 21,
+                        "namespace": null,
+                        "name": "app\/Http\/Controllers\/Admin\/IndexController.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Http\\Controllers\\Admin\\IndexController.php",
+                        "line": 23
+                    }, {
+                        "index": 22,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                        "line": 54
+                    }, {
+                        "index": 23,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                        "line": 43
+                    }, {
+                        "index": 24,
+                        "namespace": null,
+                        "name": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                        "line": 259
+                    }],
+                    "start": 1776060016.5388238,
+                    "duration": 0.00020999999999999998,
+                    "duration_str": "210\u03bcs",
+                    "slow": false,
+                    "memory": 0,
+                    "memory_str": null,
+                    "filename": "IndexService.php:37",
+                    "source": {
+                        "index": 20,
+                        "namespace": null,
+                        "name": "app\/Services\/Admin\/IndexService.php",
+                        "file": "D:\\xampp\\htdocs\\kuma.com\\app\\Services\\Admin\\IndexService.php",
+                        "line": 37
+                    },
+                    "xdebug_link": {
+                        "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FServices%2FAdmin%2FIndexService.php\u0026line=37",
+                        "ajax": false,
+                        "filename": "IndexService.php",
+                        "line": "37"
+                    },
+                    "connection": "kuma",
+                    "explain": null,
+                    "start_percent": 94.37,
+                    "width_percent": 5.63
+                }]
+            },
+            "models": {
+                "data": {
+                    "App\\Models\\SubList": {
+                        "retrieved": 5,
+                        "xdebug_link": {
+                            "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FSubList.php\u0026line=1",
+                            "ajax": false,
+                            "filename": "SubList.php",
+                            "line": "?"
+                        }
+                    },
+                    "App\\Models\\Admin": {
+                        "retrieved": 1,
+                        "xdebug_link": {
+                            "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FAdmin.php\u0026line=1",
+                            "ajax": false,
+                            "filename": "Admin.php",
+                            "line": "?"
+                        }
+                    },
+                    "App\\Models\\AdminGroup": {
+                        "retrieved": 1,
+                        "xdebug_link": {
+                            "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FAdminGroup.php\u0026line=1",
+                            "ajax": false,
+                            "filename": "AdminGroup.php",
+                            "line": "?"
+                        }
+                    },
+                    "App\\Models\\AdminSetting": {
+                        "retrieved": 1,
+                        "xdebug_link": {
+                            "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FAdminSetting.php\u0026line=1",
+                            "ajax": false,
+                            "filename": "AdminSetting.php",
+                            "line": "?"
+                        }
+                    },
+                    "App\\Models\\Order": {
+                        "retrieved": 1,
+                        "xdebug_link": {
+                            "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FOrder.php\u0026line=1",
+                            "ajax": false,
+                            "filename": "Order.php",
+                            "line": "?"
+                        }
+                    },
+                    "App\\Models\\OrderStatus": {
+                        "retrieved": 1,
+                        "xdebug_link": {
+                            "url": "phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FModels%2FOrderStatus.php\u0026line=1",
+                            "ajax": false,
+                            "filename": "OrderStatus.php",
+                            "line": "?"
+                        }
+                    }
+                },
+                "count": 10,
+                "key_map": {
+                    "retrieved": "Retrieved",
+                    "created": "Created",
+                    "updated": "Updated",
+                    "deleted": "Deleted"
+                },
+                "is_counter": true,
+                "badges": {
+                    "retrieved": 10
+                }
+            },
+            "symfonymailer_mails": {
+                "count": 0,
+                "mails": []
+            },
+            "gate": {
+                "count": 0,
+                "messages": []
+            },
+            "request": {
+                "data": {
+                    "status": "200 OK",
+                    "full_url": "https:\/\/info.ouorange.com\/kuma.com\/admin\/index",
+                    "action_name": "admin.index.index",
+                    "controller_action": "App\\Http\\Controllers\\Admin\\IndexController@index",
+                    "uri": "GET admin\/index",
+                    "controller": "App\\Http\\Controllers\\Admin\\IndexController@index\u003Ca href=\u0022phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FAdmin%2FIndexController.php\u0026line=21\u0022 class=\u0022phpdebugbar-widgets-editor-link\u0022\u003E\u003C\/a\u003E",
+                    "prefix": "\/admin",
+                    "file": "\u003Ca href=\u0022phpstorm:\/\/open?file=D%3A%2Fxampp%2Fhtdocs%2Fkuma.com%2Fapp%2FHttp%2FControllers%2FAdmin%2FIndexController.php\u0026line=21\u0022 onclick=\u0022\u0022 class=\u0022phpdebugbar-widgets-editor-link\u0022\u003Eapp\/Http\/Controllers\/Admin\/IndexController.php:21-26\u003C\/a\u003E",
+                    "middleware": "web, auth",
+                    "duration": "95.88ms",
+                    "peak_memory": "4MB",
+                    "response": "text\/html; charset=UTF-8",
+                    "request_format": "html",
+                    "request_query": "\u003Cpre class=sf-dump id=sf-dump-532274095 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-532274095\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n",
+                    "request_request": "\u003Cpre class=sf-dump id=sf-dump-1625804425 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1625804425\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n",
+                    "request_headers": "\u003Cpre class=sf-dump id=sf-dump-116311884 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:17\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Ecache-control\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00229 characters\u0022\u003Emax-age=0\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-ch-ua\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002265 characters\u0022\u003E\u0026quot;Chromium\u0026quot;;v=\u0026quot;146\u0026quot;, \u0026quot;Not-A.Brand\u0026quot;;v=\u0026quot;24\u0026quot;, \u0026quot;Google Chrome\u0026quot;;v=\u0026quot;146\u0026quot;\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-ch-ua-mobile\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00222 characters\u0022\u003E?0\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-ch-ua-platform\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00229 characters\u0022\u003E\u0026quot;Windows\u0026quot;\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Eupgrade-insecure-requests\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str\u003E1\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Euser-agent\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u0022111 characters\u0022\u003EMozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/146.0.0.0 Safari\/537.36\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u0022135 characters\u0022\u003Etext\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-fetch-site\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002211 characters\u0022\u003Esame-origin\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-fetch-mode\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00228 characters\u0022\u003Enavigate\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-fetch-user\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00222 characters\u0022\u003E?1\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Esec-fetch-dest\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00228 characters\u0022\u003Edocument\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ereferer\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003Ehttps:\/\/info.ouorange.com\/kuma.com\/admin\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept-encoding\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002223 characters\u0022\u003Egzip, deflate, br, zstd\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept-language\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002235 characters\u0022\u003Ezh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ecookie\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u0022710 characters\u0022\u003EXSRF-TOKEN=eyJpdiI6IjF2dC90U1VoSkdhNTZXSExrc1JBQWc9PSIsInZhbHVlIjoiSXZWSGZBNU83RmNjWC8wamtYZDNvVWZFRlhTUnpndmIvRnk4RTJHTVFJd0srVE5zQWk4RjRIM0FWSWF3c3BoZUFlMmNsRzluMEpOUkwrclAzaVNtNnRTcVN2N0NzdmhrS0RiaDZzMDhSWkdKdVpieEdQYnF0ZGo2T3cwSGQzVksiLCJtYWMiOiIxOTQ5OTE4OTgzM2NhYmYwZWRhZTUwZjM2MDUwMzIxNTcxY2EwMTE2ODViZTY2ODJjODQyMWIyZWI1MWU4OTI4IiwidGFnIjoiIn0%3D; kuma_session=eyJpdiI6IjJYNG4vQ0F3T2hjcG1waDFpUXlQYkE9PSIsInZhbHVlIjoiVkhQcDFHV2pTUmdvTFlpM2ZrWGNtSVN2d1lIWGNhamhCRGU4WDFhd2VlOWVrblpPZnErK1BVaGRPamFqcW5KSWcwOGpoMDVwK2VmWXhRMlI3cVZnaGN5R0l5Wm94b2dpMTM0UFRWdVlvMDdKWlJzSWZhMmlCTzR2RU5hLzZWS1AiLCJtYWMiOiJiMzNlZTg4NjA4OWVlZTUxODY5NjdjMjY2ZDYzOGQ5MTgzMjcxYzU0N2JlYzVjMmZhYzgzMzIzODJmMGU2ODExIiwidGFnIjoiIn0%3D\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Epriority\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00226 characters\u0022\u003Eu=0, i\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ehost\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002217 characters\u0022\u003Einfo.ouorange.com\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-116311884\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n",
+                    "request_cookies": "\u003Cpre class=sf-dump id=sf-dump-719369010 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:2\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003EXSRF-TOKEN\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003EWH5zj6C6HmiuaNdfbDCw55D2kZ8mMA8rHCwkqPPU\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003Ekuma_session\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003EyTwZAfSLZepZlQkrU38exwxQq8hYtDcuRRs6bREw\u003C\/span\u003E\u0022\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-719369010\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n",
+                    "response_headers": "\u003Cpre class=sf-dump id=sf-dump-981450205 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:3\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Econtent-type\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002224 characters\u0022\u003Etext\/html; charset=UTF-8\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ecache-control\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002217 characters\u0022\u003Eno-cache, private\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Edate\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002229 characters\u0022\u003EMon, 13 Apr 2026 06:00:16 GMT\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-981450205\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n",
+                    "session_attributes": "\u003Cpre class=sf-dump id=sf-dump-1444886992 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:7\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003E_token\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003EWH5zj6C6HmiuaNdfbDCw55D2kZ8mMA8rHCwkqPPU\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003E_previous\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u0022\u003Cspan class=sf-dump-key\u003Eurl\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002276 characters\u0022\u003Ehttps:\/\/info.ouorange.com\/kuma.com\/admin_assets\/plugins\/toastr\/toastr.js.map\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003E_flash\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:2\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u0022\u003Cspan class=sf-dump-key\u003Eold\u003C\/span\u003E\u0022 =\u003E []\n    \u0022\u003Cspan class=sf-dump-key\u003Enew\u003C\/span\u003E\u0022 =\u003E []\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Elogin_web_59ba36addc2b2f9401580f014c7f58ea4e30989d\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-num\u003E14\u003C\/span\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Elogin\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str\u003EY\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003Epassword\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00229 characters\u0022\u003Ekuma!2022\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003EPHPDEBUGBAR_STACK_DATA\u003C\/span\u003E\u0022 =\u003E []\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1444886992\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n"
+                },
+                "tooltip": {
+                    "status": "200 OK",
+                    "full_url": "https:\/\/info.ouorange.com\/kuma.com\/admin\/index",
+                    "action_name": "admin.index.index",
+                    "controller_action": "App\\Http\\Controllers\\Admin\\IndexController@index"
+                },
+                "badge": null
+            }
+        }, "01KP2PT9X3W5J178DGF9WXDY23");
+    </script>
+</body>
+
+</html>
